@@ -1,5 +1,6 @@
 <?php
 
+use App\Favorite;
 use Illuminate\Http\Request;
 
 /*
@@ -15,4 +16,9 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::post('/snippets/{snippet}/favorite/{user}', function (Snippet $snippet, User $user)
+{
+    return Favorite::create(['object_id' => $snippet->id, 'user_id' => $user->id, 'type', Favorite::SNIPPET]);
 });

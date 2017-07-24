@@ -34,6 +34,7 @@ Route::get('/snippets/author/{user}', function (Snippet $snippet, User $user)
         'value' => $user->name
     ]);
 });
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
