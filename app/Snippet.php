@@ -3,11 +3,12 @@
 namespace App;
 
 use App\Language;
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Snippet extends Model
 {
-    protected $fillable = ['title', 'body', 'forked_id', 'language_id'];
+    protected $fillable = ['title', 'body', 'forked_id', 'language_id', 'user_id'];
 
     public function forks()
     {
@@ -28,5 +29,10 @@ class Snippet extends Model
     {
         // !! casts as a boolean
         return !! $this->originalSnippet;
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

@@ -2,7 +2,11 @@
     <ul>
         <li>
             Filled Under:
-            <a href="snippets/language/{{ $snippet->language->id }}">{{ $snippet->language->name }}</a>
+            <a href="/snippets/language/{{ $snippet->language->id }}">{{ $snippet->language->name }}</a>
+        </li>
+        <li>
+            By:
+            <a href="/snippets/author/{{ $snippet->user->id }}">{{ $snippet->user->name }}</a>
         </li>
         <li>
             <a href="/snippets/{{ $snippet->id }}/fork">Fork Me</a>

@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use App\Snippet;
 use App\Language;
 /*
@@ -20,5 +21,21 @@ Route::post('/snippets', 'SnippetsController@store');
 Route::get('/snippets/{snippet}/fork', 'SnippetsController@create');
 Route::get('/snippets/language/{language}', function (Snippet $snippet, Language $language) {
     $snippetsByLanguage = $snippet->where(['language_id' => $language->id])->get();
-    return view('snippets.language', ['snippets' => $snippetsByLanguage, 'language' => $language->name]);
+    return view('snippets.index', [
+        'snippets' => $snippetsByLanguage,
+        'type' => 'language',
+        'value' => $language->name
+    ]);
 });
+Route::get('/snippets/author/{user}', function (Snippet $snippet, User $user)
+{
+    $snippetsByAuthor = $snippet->where(['user_id' => $user->id])->get();
+    return view('snippets.index', [
+        'snippets' => $snippetsByAuthor,
+        'type' => 'author',
+        'value' => $user->name
+    ]);
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
