@@ -14,3 +14,18 @@ article.snippet {
 .flex {
     flex: 1;
 }
+
+.tabs:not(:last-child) {
+    margin-bottom: 0;
+}
+
+.tab-content {
+    border: 1px solid #dbdbdb;
+    border-top: none;
+    display: none;
+    padding: 2em 0;
+
+    &.is-active {
+        display: block;
+    }
+}

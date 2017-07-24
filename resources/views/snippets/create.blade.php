@@ -20,11 +20,13 @@
             <label for="language_id" class="label">Language</label>
 
             <div class="control">
-                <select name="language_id" id="language" class="select">
-                    @foreach($languageOptions as $language)
-                        <option class="option" value="{{ $loop->index + 1 }}" {{ $loop->index + 1 === $snippet->language_id ? 'selected' : '' }}>{{ $language }}</option>
-                    @endforeach
-                </select>
+                <div class="select">
+                    <select name="language_id" id="language">
+                        @foreach($languageOptions as $language)
+                            <option class="option" value="{{ $loop->index + 1 }}" {{ $loop->index + 1 === $snippet->language_id ? 'selected' : '' }}>{{ $language }}</option>
+                        @endforeach
+                    </select>
+                </div>
             </div>
         </div>
 
