@@ -32,7 +32,8 @@ class SnippetsController extends Controller
         Snippet::create([
             'title' => request('title'),
             'body' => request('body'),
-            'forked_id' => request('forked_id')
+            'forked_id' => request('forked_id'),
+            'language_id' => request('language_id')
         ]);
 
         return redirect()->home();
