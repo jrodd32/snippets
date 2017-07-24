@@ -1,5 +1,7 @@
 <?php
 
+use App\Snippet;
+use App\Language;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +18,7 @@ Route::get('/snippets/create', 'SnippetsController@create');
 Route::get('/snippets/{snippet}', 'SnippetsController@show');
 Route::post('/snippets', 'SnippetsController@store');
 Route::get('/snippets/{snippet}/fork', 'SnippetsController@create');
+Route::get('/snippets/language/{language}', function (Snippet $snippet, Language $language) {
+    $snippetsByLanguage = $snippet->where(['language_id' => $language->id])->get();
+    return view('snippets.language', ['snippets' => $snippetsByLanguage, 'language' => $language->name]);
+});

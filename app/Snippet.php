@@ -2,11 +2,12 @@
 
 namespace App;
 
+use App\Language;
 use Illuminate\Database\Eloquent\Model;
 
 class Snippet extends Model
 {
-    protected $fillable = ['title', 'body', 'forked_id'];
+    protected $fillable = ['title', 'body', 'forked_id', 'language_id'];
 
     public function forks()
     {
@@ -16,6 +17,11 @@ class Snippet extends Model
     public function originalSnippet()
     {
         return $this->belongsTo(Snippet::class, 'forked_id');
+    }
+
+    public function language()
+    {
+        return $this->belongsTo(Language::class);
     }
 
     public function isAFork()

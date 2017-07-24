@@ -14,6 +14,15 @@
         </div>
 
         <div class="control">
+            <label for="language_id" class="label">Language</label>
+            <select name="language_id" id="language" class="select">
+                @foreach($languageOptions as $language)
+                    <option class="option" value="{{ $loop->index }}">{{ $language }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="control">
             <label for="body" class="label">Body:</label>
             <textarea name="body" id="body" cols="30" rows="10" class="textarea">{{ $snippet->body }}</textarea>
         </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Language;
 use App\Snippet;
 
 class SnippetsController extends Controller
@@ -14,7 +15,14 @@ class SnippetsController extends Controller
 
     public function create(Snippet $snippet)
     {
-        return view('snippets.create', compact('snippet'));
+        $languageOptions = [
+            Language::HTML => 'HTML',
+            Language::CSS => 'CSS',
+            Language::JAVASCRIPT => 'Javascript',
+            Language::RUBY => 'Ruby',
+            Language::BASH => 'Bash / Shell',
+        ];
+        return view('snippets.create', compact('snippet', 'languageOptions'));
     }
 
     public function show(Snippet $snippet)
