@@ -49,7 +49,6 @@
                     <div class="navbar-dropdown">
                         @if (Auth::check())
                             <a class="navbar-item" href="/">Home</a>
-                            <a class="navbar-item" href="/snippets/author/{{ auth()->user()->id }}">My Snippets</a>
                             <a class="navbar-item" href="/home">Profile</a>
                             <hr class="navbar-divider">
                             <a class="navbar-item" href="{{ route('logout') }}"
