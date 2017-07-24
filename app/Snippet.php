@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Snippet extends Model
 {
+    protected $protected = ['id'];
     protected $fillable = ['title', 'body', 'forked_id', 'language_id', 'user_id'];
 
     public function forks()
