@@ -8,8 +8,10 @@
             By:
             <a href="/snippets/author/{{ $snippet->user->id }}">{{ $snippet->user->name }}</a>
         </li>
-        <li>
-            <a href="/snippets/{{ $snippet->id }}/fork">Fork Me</a>
-        </li>
+        @if (Auth::check())
+            <li>
+                <a href="/snippets/{{ $snippet->id }}/fork">Fork Me</a>
+            </li>
+        @endif
     </ul>
 </div>

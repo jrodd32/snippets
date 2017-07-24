@@ -35,4 +35,14 @@ class Snippet extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function byAuthor($author_id)
+    {
+        return Snippet::where(['user_id' => $author_id])->get();
+    }
+
+    public function byLanguage($language_id)
+    {
+        return Snippet::where(['language_id' => $language_id])->get();
+    }
 }

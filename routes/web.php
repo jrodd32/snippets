@@ -20,18 +20,16 @@ Route::get('/snippets/{snippet}', 'SnippetsController@show');
 Route::post('/snippets', 'SnippetsController@store');
 Route::get('/snippets/{snippet}/fork', 'SnippetsController@create');
 Route::get('/snippets/language/{language}', function (Snippet $snippet, Language $language) {
-    $snippetsByLanguage = $snippet->where(['language_id' => $language->id])->get();
     return view('snippets.index', [
-        'snippets' => $snippetsByLanguage,
+        'snippets' => $snippet->byLanguage($language->id),
         'type' => 'language',
         'value' => $language->name
     ]);
 });
 Route::get('/snippets/author/{user}', function (Snippet $snippet, User $user)
 {
-    $snippetsByAuthor = $snippet->where(['user_id' => $user->id])->get();
     return view('snippets.index', [
-        'snippets' => $snippetsByAuthor,
+        'snippets' => $snippet->byAuthor($user->id),
         'type' => 'author',
         'value' => $user->name
     ]);
