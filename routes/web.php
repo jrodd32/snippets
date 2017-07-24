@@ -3,6 +3,7 @@
 use App\User;
 use App\Snippet;
 use App\Language;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,8 +27,7 @@ Route::get('/snippets/language/{language}', function (Snippet $snippet, Language
         'value' => $language->name
     ]);
 });
-Route::get('/snippets/author/{user}', function (Snippet $snippet, User $user)
-{
+Route::get('/snippets/author/{user}', function (Snippet $snippet, User $user) {
     return view('snippets.index', [
         'snippets' => $snippet->byAuthor($user->id),
         'type' => 'author',
@@ -37,4 +37,4 @@ Route::get('/snippets/author/{user}', function (Snippet $snippet, User $user)
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('profile');

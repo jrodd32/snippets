@@ -2,11 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Doe-Anderson Snippets</title>
+    <title>{{ config('app.name', 'Doe-Anderson Snippets') }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.3/css/bulma.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <link rel="stylesheet" href="/css/app.css">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar container is-fluid">
@@ -43,7 +49,7 @@
                     <div class="navbar-dropdown">
                         @if (Auth::check())
                             <a class="navbar-item" href="/">Home</a>
-                            <a class="navbar-item" href="/my-snippets">My Snippets</a>
+                            <a class="navbar-item" href="/snippets/author/{{ auth()->user()->id }}">My Snippets</a>
                             <a class="navbar-item" href="/home">Profile</a>
                             <hr class="navbar-divider">
                             <a class="navbar-item" href="{{ route('logout') }}"
@@ -94,30 +100,6 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Get all "navbar-burger" elements
-            var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-            // Check if there are any nav burgers
-            if ($navbarBurgers.length > 0) {
-
-            // Add a click event on each of them
-            $navbarBurgers.forEach(function ($el) {
-              $el.addEventListener('click', () => {
-
-                // Get the target from the "data-target" attribute
-                var target = $el.dataset.target;
-                var $target = document.getElementById(target);
-
-                // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-                $el.classList.toggle('is-active');
-                $target.classList.toggle('is-active');
-
-              });
-            });
-            }
-        });
-    </script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

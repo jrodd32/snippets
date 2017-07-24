@@ -4,7 +4,10 @@
             {{ $snippet->title }}
         </a>
 
-        <a class="favorite" data-snippet="{{ $snippet->id }}" data-user="{{ auth()->user()->id }}"><sup><i class="fa fa-bookmark" aria-hidden="true"></i></sup></a>
+        @if (Auth::check())
+            <a class="favorite" data-snippet="{{ $snippet->id }}" data-user="{{ auth()->user()->id }}"><sup><i class="fa fa-star" aria-hidden="true"></i></sup></a>
+        @endif
     </h4>
+
     @include('snippets.meta')
 </div>

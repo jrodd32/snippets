@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Favorite;
+use App\Snippet;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -26,4 +28,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function favorites()
+    {
+        return $this->hasMany(Favorite::class);
+    }
+
+    public function snippets()
+    {
+        return $this->hasMany(Snippet::class);
+    }
 }

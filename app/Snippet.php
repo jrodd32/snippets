@@ -4,6 +4,7 @@ namespace App;
 
 use App\Language;
 use App\User;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Snippet extends Model
