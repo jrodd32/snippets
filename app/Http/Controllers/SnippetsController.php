@@ -33,7 +33,7 @@ class SnippetsController extends Controller
 
     public function store()
     {
-        $user_id = empty(Auth::id()) ? 1 : Auth::id();
+        $user_id = empty(auth()->user()->id) ? 1 : auth()->user()->id;
 
         $this->validate(request(), [
             'title' => 'required',
