@@ -18,6 +18,7 @@ class CreateTaggablesTable extends Migration
             $table->integer('taggable_id');
             $table->string('taggable_type');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

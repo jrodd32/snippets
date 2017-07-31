@@ -18,6 +18,7 @@ class CreateFavoritesTable extends Migration
             $table->integer('user_id');
             $table->integer('object_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

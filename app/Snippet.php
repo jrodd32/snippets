@@ -3,11 +3,22 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Snippet extends Model
 {
+    use SoftDeletes;
+
     protected $protected = ['id'];
     protected $fillable = ['title', 'body', 'forked_id', 'language_id', 'user_id'];
+    protected $guarded = ['id'];
+
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+    */
+    protected $dates = ['deleted_at'];
 
     public function forks()
     {

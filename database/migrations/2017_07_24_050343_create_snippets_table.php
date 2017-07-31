@@ -21,6 +21,7 @@ class CreateSnippetsTable extends Migration
             $table->integer('forked_id')->nullable();
             $table->integer('language_id')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
