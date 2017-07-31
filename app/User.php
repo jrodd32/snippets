@@ -38,4 +38,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Snippet::class);
     }
+
+    public function tags()
+    {
+        return $this->morphToMany('App\Tag', 'taggable');
+    }
 }

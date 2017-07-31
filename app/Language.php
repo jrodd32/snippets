@@ -14,4 +14,9 @@ class Language extends Model
     const JAVASCRIPT = 4;
     const RUBY = 5;
     const BASH = 6;
+
+    public function tags()
+    {
+        return $this->morphToMany('App\Tag', 'taggable');
+    }
 }
