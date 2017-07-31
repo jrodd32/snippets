@@ -18,7 +18,7 @@ class Favorite extends Model
     const SNIPPET = 1;
 
     protected $protected = ['id'];
-    protected $fillable = ['user_id', 'object_id', 'type'];
+    protected $fillable = ['user_id', 'object_id'];
 
     public function user()
     {
