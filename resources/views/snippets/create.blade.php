@@ -31,6 +31,18 @@
         </div>
 
         <div class="field">
+            <label for="tags[]" class="label">Tags</label>
+
+            <div class="control">
+                @foreach($tagOptions as $tag)
+                    <label class="checkbox">
+                        <input name=tags[] type="checkbox" value="{{ $loop->index + 1 }}"> {{ $tag }}
+                    </label>
+                @endforeach
+            </div>
+        </div>
+
+        <div class="field">
             <label for="body" class="label">Body:</label>
 
             <div class="control">
