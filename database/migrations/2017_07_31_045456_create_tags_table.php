@@ -17,7 +17,7 @@ class CreateTagsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->text('description');
-            $table->integer('parent_id')->unsigned();
+            $table->integer('parent_id')->nullable()->unsigned();
             $table->foreign('parent_id')->references('id')->on('tags');
             $table->timestamps();
             $table->softDeletes();
