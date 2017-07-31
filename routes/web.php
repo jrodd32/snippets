@@ -3,6 +3,7 @@
 use App\User;
 use App\Snippet;
 use App\Language;
+use App\Tag;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,13 @@ Route::get('/snippets/author/{user}', function (Snippet $snippet, User $user) {
         'snippets' => $snippet->byAuthor($user->id),
         'type' => 'author',
         'value' => $user->name
+    ]);
+});
+Route::get('/snippets/tagged/{tag}', function (Snippet $snippet, Tag $tag) {
+    return view('snippets.index', [
+        'snippets' => $snippet->tagged($tag->id),
+        'type' => 'tag',
+        'value' => $tag->name
     ]);
 });
 

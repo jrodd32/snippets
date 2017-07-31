@@ -10,7 +10,7 @@ class SnippetsController extends Controller
 {
     public function index()
     {
-        $snippets = Snippet::latest()->get();
+        $snippets = Snippet::with(['tags', 'language'])->latest()->get();
         return view('snippets.index', compact('snippets'));
     }
 
@@ -44,9 +44,11 @@ class SnippetsController extends Controller
             'user_id' => $user_id
         ]);
 
-        foreach (request('tags') as $tag) {
-            $snippet->tags()->attach($tag);
-        };
+        if (count(request('tags'))) {
+            foreach (request('tags') as $tag) {
+                $snippet->tags()->attach($tag);
+            };
+        }
 
         return redirect()->home();
     }

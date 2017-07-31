@@ -60,4 +60,11 @@ class Snippet extends Model
     {
         return Snippet::where(['language_id' => $language_id])->get();
     }
+
+    public function tagged($tag_id)
+    {
+        return Snippet::with(['tags' => function ($query) use ($tag_id) {
+            $query->where('tag_id', '=', $tag_id);
+        }])->get();
+    }
 }
