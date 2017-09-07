@@ -1,0 +1,57 @@
+# Logfile created on 2017-09-07 16:22:13 -0400 by logger.rb/56438
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-07 16:22:13 -0400 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [73acf20c] Running /usr/bin/env mkdir -p /tmp as doe@snippets.doe1915.com
+ DEBUG [73acf20c] Command: /usr/bin/env mkdir -p /tmp
+  INFO [73acf20c] Finished in 0.720 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 100.0%
+  INFO [4c048606] Running /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh as doe@snippets.doe1915.com
+ DEBUG [4c048606] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh
+  INFO [4c048606] Finished in 0.063 seconds with exit status 0 (successful).
+  INFO [2180680c] Running /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD as doe@snippets.doe1915.com
+ DEBUG [2180680c] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD )
+ DEBUG [2180680c] 	030ab2a84e6b43e1795735988a7f0a081d6f8f1b	HEAD
+  INFO [2180680c] Finished in 0.351 seconds with exit status 0 (successful).
+  INFO [38c5c9b3] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [38c5c9b3] Command: /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases
+  INFO [38c5c9b3] Finished in 0.091 seconds with exit status 0 (successful).
+ DEBUG [326b8f78] Running [ -f /opt/sites/snippets.doe1915.com/current/REVISION ] as doe@snippets.doe1915.com
+ DEBUG [326b8f78] Command: [ -f /opt/sites/snippets.doe1915.com/current/REVISION ]
+ DEBUG [326b8f78] Finished in 0.083 seconds with exit status 1 (failed).
+ DEBUG [65a5c15b] Running [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ] as doe@snippets.doe1915.com
+ DEBUG [65a5c15b] Command: [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ]
+ DEBUG [65a5c15b] Finished in 0.073 seconds with exit status 1 (failed).
+ DEBUG [d80aef5e] Running if test ! -d /opt/sites/snippets.doe1915.com; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [d80aef5e] Command: if test ! -d /opt/sites/snippets.doe1915.com; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com'" 1>&2; false; fi
+ DEBUG [d80aef5e] Finished in 0.060 seconds with exit status 0 (successful).
+  INFO [c0825ba1] Running /usr/bin/env git clone --mirror git@github.com:doeanderson/snippets /opt/sites/snippets.doe1915.com/repo as doe@snippets.doe1915.com
+ DEBUG [c0825ba1] Command: cd /opt/sites/snippets.doe1915.com && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git clone --mirror git@github.com:doeanderson/snippets /opt/sites/snippets.doe1915.com/repo )
+ DEBUG [c0825ba1] 	Cloning into bare repository '/opt/sites/snippets.doe1915.com/repo'...
+  INFO [c0825ba1] Finished in 0.455 seconds with exit status 0 (successful).
+ DEBUG [64e7d9e0] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [64e7d9e0] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [64e7d9e0] Finished in 0.079 seconds with exit status 0 (successful).
+  INFO [efc85447] Running /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets as doe@snippets.doe1915.com
+ DEBUG [efc85447] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets )
+  INFO [efc85447] Finished in 0.066 seconds with exit status 0 (successful).
+  INFO [1b1b04ef] Running /usr/bin/env git remote update --prune as doe@snippets.doe1915.com
+ DEBUG [1b1b04ef] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [1b1b04ef] 	Fetching origin
+  INFO [1b1b04ef] Finished in 0.324 seconds with exit status 0 (successful).
+ DEBUG [8902796f] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [8902796f] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [8902796f] Finished in 0.083 seconds with exit status 0 (successful).
+  INFO [b21349a6] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170907202215 as doe@snippets.doe1915.com
+ DEBUG [b21349a6] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170907202215 )
+  INFO [b21349a6] Finished in 0.059 seconds with exit status 0 (successful).
+  INFO [596b2b83] Running /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170907202215 as doe@snippets.doe1915.com
+ DEBUG [596b2b83] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170907202215 )
+ DEBUG [596b2b83] 	fatal: Not a valid object name
+ DEBUG [596b2b83] 	tar: 
+ DEBUG [596b2b83] 	This does not look like a tar archive
+ DEBUG [596b2b83] 	
+ DEBUG [596b2b83] 	tar: 
+ DEBUG [596b2b83] 	Exiting with failure status due to previous errors
+ DEBUG [596b2b83] 	
