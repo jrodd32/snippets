@@ -55,3 +55,1224 @@
  DEBUG [596b2b83] 	tar: 
  DEBUG [596b2b83] 	Exiting with failure status due to previous errors
  DEBUG [596b2b83] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-07 16:24:51 -0400 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [2baa365a] Running /usr/bin/env mkdir -p /tmp as doe@snippets.doe1915.com
+ DEBUG [2baa365a] Command: /usr/bin/env mkdir -p /tmp
+  INFO [2baa365a] Finished in 0.480 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 100.0%
+  INFO [beb7e4ef] Running /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh as doe@snippets.doe1915.com
+ DEBUG [beb7e4ef] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh
+  INFO [beb7e4ef] Finished in 0.059 seconds with exit status 0 (successful).
+  INFO [93c51486] Running /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD as doe@snippets.doe1915.com
+ DEBUG [93c51486] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD )
+ DEBUG [93c51486] 	030ab2a84e6b43e1795735988a7f0a081d6f8f1b	HEAD
+  INFO [93c51486] Finished in 0.311 seconds with exit status 0 (successful).
+  INFO [8a0a7ee5] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [8a0a7ee5] Command: /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases
+  INFO [8a0a7ee5] Finished in 0.084 seconds with exit status 0 (successful).
+ DEBUG [40bfab18] Running [ -f /opt/sites/snippets.doe1915.com/current/REVISION ] as doe@snippets.doe1915.com
+ DEBUG [40bfab18] Command: [ -f /opt/sites/snippets.doe1915.com/current/REVISION ]
+ DEBUG [40bfab18] Finished in 0.071 seconds with exit status 1 (failed).
+ DEBUG [7e953cfd] Running [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ] as doe@snippets.doe1915.com
+ DEBUG [7e953cfd] Command: [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ]
+ DEBUG [7e953cfd] Finished in 0.064 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /opt/sites/snippets.doe1915.com/repo
+ DEBUG [68997215] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [68997215] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [68997215] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [4ca57fbe] Running /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets as doe@snippets.doe1915.com
+ DEBUG [4ca57fbe] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets )
+  INFO [4ca57fbe] Finished in 0.064 seconds with exit status 0 (successful).
+  INFO [00845d96] Running /usr/bin/env git remote update --prune as doe@snippets.doe1915.com
+ DEBUG [00845d96] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [00845d96] 	Fetching origin
+ DEBUG [00845d96] 	From github.com:doeanderson/snippets
+ * [new branch]      deploy     -> deploy
+  INFO [00845d96] Finished in 0.379 seconds with exit status 0 (successful).
+ DEBUG [e34ad136] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [e34ad136] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [e34ad136] Finished in 0.119 seconds with exit status 0 (successful).
+  INFO [220cc1b5] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170907202452 as doe@snippets.doe1915.com
+ DEBUG [220cc1b5] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170907202452 )
+  INFO [220cc1b5] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [a155320a] Running /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170907202452 as doe@snippets.doe1915.com
+ DEBUG [a155320a] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170907202452 )
+  INFO [a155320a] Finished in 0.080 seconds with exit status 0 (successful).
+ DEBUG [77e6306a] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [77e6306a] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [77e6306a] Finished in 0.062 seconds with exit status 0 (successful).
+ DEBUG [a78e7923] Running /usr/bin/env git rev-list --max-count=1 deploy as doe@snippets.doe1915.com
+ DEBUG [a78e7923] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git rev-list --max-count=1 deploy )
+ DEBUG [a78e7923] 	7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea
+ DEBUG [a78e7923] Finished in 0.060 seconds with exit status 0 (successful).
+ DEBUG [a292c2d1] Running if test ! -d /opt/sites/snippets.doe1915.com/releases/20170907202452; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases/20170907202452'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [a292c2d1] Command: if test ! -d /opt/sites/snippets.doe1915.com/releases/20170907202452; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases/20170907202452'" 1>&2; false; fi
+ DEBUG [a292c2d1] Finished in 0.059 seconds with exit status 0 (successful).
+  INFO [56dd6ca7] Running /usr/bin/env echo "7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea" >> REVISION as doe@snippets.doe1915.com
+ DEBUG [56dd6ca7] Command: cd /opt/sites/snippets.doe1915.com/releases/20170907202452 && /usr/bin/env echo "7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea" >> REVISION
+  INFO [56dd6ca7] Finished in 0.061 seconds with exit status 0 (successful).
+  INFO [e4bac1f9] Running /usr/bin/env ln -s /opt/sites/snippets.doe1915.com/releases/20170907202452 /opt/sites/snippets.doe1915.com/releases/current as doe@snippets.doe1915.com
+ DEBUG [e4bac1f9] Command: /usr/bin/env ln -s /opt/sites/snippets.doe1915.com/releases/20170907202452 /opt/sites/snippets.doe1915.com/releases/current
+  INFO [e4bac1f9] Finished in 0.063 seconds with exit status 0 (successful).
+  INFO [7fbb5df2] Running /usr/bin/env mv /opt/sites/snippets.doe1915.com/releases/current /opt/sites/snippets.doe1915.com as doe@snippets.doe1915.com
+ DEBUG [7fbb5df2] Command: /usr/bin/env mv /opt/sites/snippets.doe1915.com/releases/current /opt/sites/snippets.doe1915.com
+  INFO [7fbb5df2] Finished in 0.070 seconds with exit status 0 (successful).
+ DEBUG [968ed0b1] Running /usr/bin/env ls -x /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [968ed0b1] Command: /usr/bin/env ls -x /opt/sites/snippets.doe1915.com/releases
+ DEBUG [968ed0b1] 	20170907202215	20170907202452
+ DEBUG [968ed0b1] Finished in 0.063 seconds with exit status 0 (successful).
+  INFO Keeping 1 of 2 deployed releases on snippets.doe1915.com
+  INFO [cc4b3bac] Running /usr/bin/env rm -rf /opt/sites/snippets.doe1915.com/releases/20170907202215 as doe@snippets.doe1915.com
+ DEBUG [cc4b3bac] Command: /usr/bin/env rm -rf /opt/sites/snippets.doe1915.com/releases/20170907202215
+  INFO [cc4b3bac] Finished in 0.059 seconds with exit status 0 (successful).
+ DEBUG [935cb3c5] Running if test ! -d /opt/sites/snippets.doe1915.com/releases; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [935cb3c5] Command: if test ! -d /opt/sites/snippets.doe1915.com/releases; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases'" 1>&2; false; fi
+ DEBUG [935cb3c5] Finished in 0.064 seconds with exit status 0 (successful).
+  INFO [bd295dc4] Running /usr/bin/env echo "Branch deploy (at 7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea) deployed as release 20170907202452 by jlong" >> /opt/sites/snippets.doe1915.com/revisions.log as doe@snippets.doe1915.com
+ DEBUG [bd295dc4] Command: cd /opt/sites/snippets.doe1915.com/releases && /usr/bin/env echo "Branch deploy (at 7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea) deployed as release 20170907202452 by jlong" >> /opt/sites/snippets.doe1915.com/revisions.log
+  INFO [bd295dc4] Finished in 0.059 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-07 16:56:52 -0400 cap staging shared_files:initial_move
+  INFO ---------------------------------------------------------------------------
+  INFO [2ac6eb79] Running scp -r vendor/ jlong@doe1915.com:/home/jlong as doe@snippets.doe1915.com
+ DEBUG [2ac6eb79] Command: scp -r vendor/ jlong@doe1915.com:/home/jlong
+ DEBUG [2ac6eb79] 	ssh: connect to host doe1915.com port 22: Connection timed out
+ DEBUG [2ac6eb79] 	lost connection
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-11 09:46:41 -0400 cap staging shared_files:initial_move
+  INFO ---------------------------------------------------------------------------
+  INFO [098127a0] Running scp -r vendor/ jlong@doe1915.com:/home/jlong as doe@snippets.doe1915.com
+ DEBUG [098127a0] Command: scp -r vendor/ jlong@doe1915.com:/home/jlong
+ DEBUG [098127a0] 	ssh: connect to host doe1915.com port 22: Connection timed out
+ DEBUG [098127a0] 	lost connection
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-11 10:33:57 -0400 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [44ef0ef4] Running /usr/bin/env mkdir -p /tmp as doe@snippets.doe1915.com
+ DEBUG [44ef0ef4] Command: /usr/bin/env mkdir -p /tmp
+  INFO [44ef0ef4] Finished in 0.648 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 100.0%
+  INFO [6622768f] Running /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh as doe@snippets.doe1915.com
+ DEBUG [6622768f] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh
+  INFO [6622768f] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [b336d5c5] Running /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD as doe@snippets.doe1915.com
+ DEBUG [b336d5c5] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD )
+ DEBUG [b336d5c5] 	030ab2a84e6b43e1795735988a7f0a081d6f8f1b	HEAD
+  INFO [b336d5c5] Finished in 0.357 seconds with exit status 0 (successful).
+  INFO [4ec7bec1] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [4ec7bec1] Command: /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases
+  INFO [4ec7bec1] Finished in 0.079 seconds with exit status 0 (successful).
+ DEBUG [77a1c32b] Running [ -f /opt/sites/snippets.doe1915.com/current/REVISION ] as doe@snippets.doe1915.com
+ DEBUG [77a1c32b] Command: [ -f /opt/sites/snippets.doe1915.com/current/REVISION ]
+ DEBUG [77a1c32b] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [9b95c3d0] Running /usr/bin/env cat /opt/sites/snippets.doe1915.com/current/REVISION 2>/dev/null as doe@snippets.doe1915.com
+ DEBUG [9b95c3d0] Command: /usr/bin/env cat /opt/sites/snippets.doe1915.com/current/REVISION 2>/dev/null
+ DEBUG [9b95c3d0] 	7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea
+ DEBUG [9b95c3d0] Finished in 0.056 seconds with exit status 0 (successful).
+ DEBUG [5f8138c0] Running [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ] as doe@snippets.doe1915.com
+ DEBUG [5f8138c0] Command: [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ]
+ DEBUG [5f8138c0] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /opt/sites/snippets.doe1915.com/repo
+ DEBUG [e6239f02] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [e6239f02] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [e6239f02] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [54e8e9eb] Running /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets as doe@snippets.doe1915.com
+ DEBUG [54e8e9eb] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets )
+  INFO [54e8e9eb] Finished in 0.063 seconds with exit status 0 (successful).
+  INFO [32361551] Running /usr/bin/env git remote update --prune as doe@snippets.doe1915.com
+ DEBUG [32361551] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [32361551] 	Fetching origin
+  INFO [32361551] Finished in 0.340 seconds with exit status 0 (successful).
+ DEBUG [ebe15cd6] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [ebe15cd6] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [ebe15cd6] Finished in 0.074 seconds with exit status 0 (successful).
+  INFO [49a53197] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170911143358 as doe@snippets.doe1915.com
+ DEBUG [49a53197] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170911143358 )
+  INFO [49a53197] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [85b4e0fd] Running /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170911143358 as doe@snippets.doe1915.com
+ DEBUG [85b4e0fd] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170911143358 )
+  INFO [85b4e0fd] Finished in 0.088 seconds with exit status 0 (successful).
+ DEBUG [2989cccc] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [2989cccc] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [2989cccc] Finished in 0.057 seconds with exit status 0 (successful).
+ DEBUG [798aea17] Running /usr/bin/env git rev-list --max-count=1 deploy as doe@snippets.doe1915.com
+ DEBUG [798aea17] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git rev-list --max-count=1 deploy )
+ DEBUG [798aea17] 	7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea
+ DEBUG [798aea17] Finished in 0.062 seconds with exit status 0 (successful).
+ DEBUG [bc262f9a] Running if test ! -d /opt/sites/snippets.doe1915.com/releases/20170911143358; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases/20170911143358'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [bc262f9a] Command: if test ! -d /opt/sites/snippets.doe1915.com/releases/20170911143358; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases/20170911143358'" 1>&2; false; fi
+ DEBUG [bc262f9a] Finished in 0.060 seconds with exit status 0 (successful).
+  INFO [1cbde781] Running /usr/bin/env echo "7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea" >> REVISION as doe@snippets.doe1915.com
+ DEBUG [1cbde781] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911143358 && /usr/bin/env echo "7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea" >> REVISION
+  INFO [1cbde781] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [92dda2ed] Running /usr/bin/env ln -s /opt/sites/snippets.doe1915.com/releases/20170911143358 /opt/sites/snippets.doe1915.com/releases/current as doe@snippets.doe1915.com
+ DEBUG [92dda2ed] Command: /usr/bin/env ln -s /opt/sites/snippets.doe1915.com/releases/20170911143358 /opt/sites/snippets.doe1915.com/releases/current
+  INFO [92dda2ed] Finished in 0.059 seconds with exit status 0 (successful).
+  INFO [a1a6cf5d] Running /usr/bin/env mv /opt/sites/snippets.doe1915.com/releases/current /opt/sites/snippets.doe1915.com as doe@snippets.doe1915.com
+ DEBUG [a1a6cf5d] Command: /usr/bin/env mv /opt/sites/snippets.doe1915.com/releases/current /opt/sites/snippets.doe1915.com
+  INFO [a1a6cf5d] Finished in 0.061 seconds with exit status 0 (successful).
+ DEBUG [73a00a8d] Running /usr/bin/env ls -x /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [73a00a8d] Command: /usr/bin/env ls -x /opt/sites/snippets.doe1915.com/releases
+ DEBUG [73a00a8d] 	20170907202452	20170911143358
+ DEBUG [73a00a8d] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO Keeping 1 of 2 deployed releases on snippets.doe1915.com
+  INFO [22ebc6a1] Running /usr/bin/env rm -rf /opt/sites/snippets.doe1915.com/releases/20170907202452 as doe@snippets.doe1915.com
+ DEBUG [22ebc6a1] Command: /usr/bin/env rm -rf /opt/sites/snippets.doe1915.com/releases/20170907202452
+  INFO [22ebc6a1] Finished in 0.063 seconds with exit status 0 (successful).
+ DEBUG [5d68dc2f] Running if test ! -d /opt/sites/snippets.doe1915.com/releases; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [5d68dc2f] Command: if test ! -d /opt/sites/snippets.doe1915.com/releases; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases'" 1>&2; false; fi
+ DEBUG [5d68dc2f] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [74c02ae2] Running /usr/bin/env echo "Branch deploy (at 7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea) deployed as release 20170911143358 by jlong" >> /opt/sites/snippets.doe1915.com/revisions.log as doe@snippets.doe1915.com
+ DEBUG [74c02ae2] Command: cd /opt/sites/snippets.doe1915.com/releases && /usr/bin/env echo "Branch deploy (at 7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea) deployed as release 20170911143358 by jlong" >> /opt/sites/snippets.doe1915.com/revisions.log
+  INFO [74c02ae2] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [b5a024d2] Running cp -r /opt/sites/snippets.doe1915.com/vendor /opt/sites/snippets.doe1915.com/releases/20170911143358 as doe@snippets.doe1915.com
+ DEBUG [b5a024d2] Command: cp -r /opt/sites/snippets.doe1915.com/vendor /opt/sites/snippets.doe1915.com/releases/20170911143358
+  INFO [b5a024d2] Finished in 3.095 seconds with exit status 0 (successful).
+  INFO [ebbe5a5c] Running cp -r /opt/sites/snippets.doe1915.com/bootstrap /opt/sites/snippets.doe1915.com/releases/20170911143358 as doe@snippets.doe1915.com
+ DEBUG [ebbe5a5c] Command: cp -r /opt/sites/snippets.doe1915.com/bootstrap /opt/sites/snippets.doe1915.com/releases/20170911143358
+  INFO [ebbe5a5c] Finished in 0.059 seconds with exit status 0 (successful).
+  INFO [b8247686] Running cp /opt/sites/snippets.doe1915.com/.env /opt/sites/snippets.doe1915.com/releases/20170911143358 as doe@snippets.doe1915.com
+ DEBUG [b8247686] Command: cp /opt/sites/snippets.doe1915.com/.env /opt/sites/snippets.doe1915.com/releases/20170911143358
+  INFO [b8247686] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [8b5318aa] Running cd /opt/sites/snippets.doe1915.com/releases/20170911143358/storage/logs/ && sudo touch laravel.log && sudo chown www-data:www-data laravel.log && sudo chmod 775 laravel.log as doe@snippets.doe1915.com
+ DEBUG [8b5318aa] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911143358/storage/logs/ && sudo touch laravel.log && sudo chown www-data:www-data laravel.log && sudo chmod 775 laravel.log
+  INFO [8b5318aa] Finished in 0.091 seconds with exit status 0 (successful).
+  INFO [f393d8cd] Running cd /opt/sites/snippets.doe1915.com/releases/20170911143358 && php artisan route:clear && php artisan config:clear && php artisan view:clear as doe@snippets.doe1915.com
+ DEBUG [f393d8cd] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911143358 && php artisan route:clear && php artisan config:clear && php artisan view:clear
+ DEBUG [f393d8cd] 	Route cache cleared!
+ DEBUG [f393d8cd] 	
+ DEBUG [f393d8cd] 	Configuration cache cleared!
+ DEBUG [f393d8cd] 	
+ DEBUG [f393d8cd] 	Compiled views cleared!
+ DEBUG [f393d8cd] 	
+  INFO [f393d8cd] Finished in 0.672 seconds with exit status 0 (successful).
+  INFO [9ba7c8cb] Running sudo chmod -R 777 /opt/sites/snippets.doe1915.com/releases/20170911143358/storage/framework/ as doe@snippets.doe1915.com
+ DEBUG [9ba7c8cb] Command: sudo chmod -R 777 /opt/sites/snippets.doe1915.com/releases/20170911143358/storage/framework/
+  INFO [9ba7c8cb] Finished in 0.074 seconds with exit status 0 (successful).
+  INFO [004ae342] Running scp -r public/css jlong@doe1915.com:/home/jlong as jlong@localhost
+ DEBUG [004ae342] Command: scp -r public/css jlong@doe1915.com:/home/jlong
+  INFO [004ae342] Finished in 0.727 seconds with exit status 0 (successful).
+  INFO [4d954090] Running scp -r public/js jlong@doe1915.com:/home/jlong as jlong@localhost
+ DEBUG [4d954090] Command: scp -r public/js jlong@doe1915.com:/home/jlong
+  INFO [4d954090] Finished in 0.941 seconds with exit status 0 (successful).
+  INFO [3a66bee6] Running sudo chown -R doe:doe /home/jlong/css /home/jlong/js as doe@snippets.doe1915.com
+ DEBUG [3a66bee6] Command: sudo chown -R doe:doe /home/jlong/css /home/jlong/js
+  INFO [3a66bee6] Finished in 0.066 seconds with exit status 0 (successful).
+  INFO [3ed9437b] Running sudo cp -r /home/jlong/css /opt/sites/snippets.doe1915.com/releases/20170911143358/public/ as doe@snippets.doe1915.com
+ DEBUG [3ed9437b] Command: sudo cp -r /home/jlong/css /opt/sites/snippets.doe1915.com/releases/20170911143358/public/
+  INFO [3ed9437b] Finished in 0.063 seconds with exit status 0 (successful).
+  INFO [6e1d0293] Running sudo cp -r /home/jlong/js /opt/sites/snippets.doe1915.com/releases/20170911143358/public/ as doe@snippets.doe1915.com
+ DEBUG [6e1d0293] Command: sudo cp -r /home/jlong/js /opt/sites/snippets.doe1915.com/releases/20170911143358/public/
+  INFO [6e1d0293] Finished in 0.063 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-11 10:49:37 -0400 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [bc8cc7c5] Running /usr/bin/env mkdir -p /tmp as doe@snippets.doe1915.com
+ DEBUG [bc8cc7c5] Command: /usr/bin/env mkdir -p /tmp
+  INFO [bc8cc7c5] Finished in 0.621 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 100.0%
+  INFO [68599d29] Running /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh as doe@snippets.doe1915.com
+ DEBUG [68599d29] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh
+  INFO [68599d29] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [315f5972] Running /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD as doe@snippets.doe1915.com
+ DEBUG [315f5972] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD )
+ DEBUG [315f5972] 	030ab2a84e6b43e1795735988a7f0a081d6f8f1b	HEAD
+  INFO [315f5972] Finished in 0.346 seconds with exit status 0 (successful).
+  INFO [6b9fd9ca] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [6b9fd9ca] Command: /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases
+  INFO [6b9fd9ca] Finished in 0.075 seconds with exit status 0 (successful).
+ DEBUG [49eb465e] Running [ -f /opt/sites/snippets.doe1915.com/current/REVISION ] as doe@snippets.doe1915.com
+ DEBUG [49eb465e] Command: [ -f /opt/sites/snippets.doe1915.com/current/REVISION ]
+ DEBUG [49eb465e] Finished in 0.053 seconds with exit status 0 (successful).
+ DEBUG [7df9965c] Running /usr/bin/env cat /opt/sites/snippets.doe1915.com/current/REVISION 2>/dev/null as doe@snippets.doe1915.com
+ DEBUG [7df9965c] Command: /usr/bin/env cat /opt/sites/snippets.doe1915.com/current/REVISION 2>/dev/null
+ DEBUG [7df9965c] 	7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea
+ DEBUG [7df9965c] Finished in 0.057 seconds with exit status 0 (successful).
+ DEBUG [39aaa594] Running [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ] as doe@snippets.doe1915.com
+ DEBUG [39aaa594] Command: [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ]
+ DEBUG [39aaa594] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /opt/sites/snippets.doe1915.com/repo
+ DEBUG [504d9f77] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [504d9f77] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [504d9f77] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [b6fccd07] Running /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets as doe@snippets.doe1915.com
+ DEBUG [b6fccd07] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets )
+  INFO [b6fccd07] Finished in 0.065 seconds with exit status 0 (successful).
+  INFO [93d40d12] Running /usr/bin/env git remote update --prune as doe@snippets.doe1915.com
+ DEBUG [93d40d12] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [93d40d12] 	Fetching origin
+  INFO [93d40d12] Finished in 0.348 seconds with exit status 0 (successful).
+ DEBUG [65eaa4bd] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [65eaa4bd] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [65eaa4bd] Finished in 0.074 seconds with exit status 0 (successful).
+  INFO [ff95f955] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170911144938 as doe@snippets.doe1915.com
+ DEBUG [ff95f955] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170911144938 )
+  INFO [ff95f955] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [1455624e] Running /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170911144938 as doe@snippets.doe1915.com
+ DEBUG [1455624e] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170911144938 )
+  INFO [1455624e] Finished in 0.084 seconds with exit status 0 (successful).
+ DEBUG [3270e761] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [3270e761] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [3270e761] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [266da246] Running /usr/bin/env git rev-list --max-count=1 deploy as doe@snippets.doe1915.com
+ DEBUG [266da246] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git rev-list --max-count=1 deploy )
+ DEBUG [266da246] 	7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea
+ DEBUG [266da246] Finished in 0.056 seconds with exit status 0 (successful).
+ DEBUG [d2651cbc] Running if test ! -d /opt/sites/snippets.doe1915.com/releases/20170911144938; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases/20170911144938'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [d2651cbc] Command: if test ! -d /opt/sites/snippets.doe1915.com/releases/20170911144938; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases/20170911144938'" 1>&2; false; fi
+ DEBUG [d2651cbc] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO [816cb749] Running /usr/bin/env echo "7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea" >> REVISION as doe@snippets.doe1915.com
+ DEBUG [816cb749] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911144938 && /usr/bin/env echo "7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea" >> REVISION
+  INFO [816cb749] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [3baeb776] Running /usr/bin/env ln -s /opt/sites/snippets.doe1915.com/releases/20170911144938 /opt/sites/snippets.doe1915.com/releases/current as doe@snippets.doe1915.com
+ DEBUG [3baeb776] Command: /usr/bin/env ln -s /opt/sites/snippets.doe1915.com/releases/20170911144938 /opt/sites/snippets.doe1915.com/releases/current
+  INFO [3baeb776] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [2d19b0eb] Running /usr/bin/env mv /opt/sites/snippets.doe1915.com/releases/current /opt/sites/snippets.doe1915.com as doe@snippets.doe1915.com
+ DEBUG [2d19b0eb] Command: /usr/bin/env mv /opt/sites/snippets.doe1915.com/releases/current /opt/sites/snippets.doe1915.com
+  INFO [2d19b0eb] Finished in 0.059 seconds with exit status 0 (successful).
+ DEBUG [ab91c990] Running /usr/bin/env ls -x /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [ab91c990] Command: /usr/bin/env ls -x /opt/sites/snippets.doe1915.com/releases
+ DEBUG [ab91c990] 	20170911143358	20170911144938
+ DEBUG [ab91c990] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO Keeping 1 of 2 deployed releases on snippets.doe1915.com
+  INFO [ae354cf6] Running /usr/bin/env rm -rf /opt/sites/snippets.doe1915.com/releases/20170911143358 as doe@snippets.doe1915.com
+ DEBUG [ae354cf6] Command: /usr/bin/env rm -rf /opt/sites/snippets.doe1915.com/releases/20170911143358
+  INFO [ae354cf6] Finished in 0.195 seconds with exit status 0 (successful).
+ DEBUG [73f05c3f] Running if test ! -d /opt/sites/snippets.doe1915.com/releases; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [73f05c3f] Command: if test ! -d /opt/sites/snippets.doe1915.com/releases; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases'" 1>&2; false; fi
+ DEBUG [73f05c3f] Finished in 0.060 seconds with exit status 0 (successful).
+  INFO [8177fb8e] Running /usr/bin/env echo "Branch deploy (at 7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea) deployed as release 20170911144938 by jlong" >> /opt/sites/snippets.doe1915.com/revisions.log as doe@snippets.doe1915.com
+ DEBUG [8177fb8e] Command: cd /opt/sites/snippets.doe1915.com/releases && /usr/bin/env echo "Branch deploy (at 7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea) deployed as release 20170911144938 by jlong" >> /opt/sites/snippets.doe1915.com/revisions.log
+  INFO [8177fb8e] Finished in 0.060 seconds with exit status 0 (successful).
+  INFO [52c56db4] Running cp -r /opt/sites/snippets.doe1915.com/vendor /opt/sites/snippets.doe1915.com/releases/20170911144938 as doe@snippets.doe1915.com
+ DEBUG [52c56db4] Command: cp -r /opt/sites/snippets.doe1915.com/vendor /opt/sites/snippets.doe1915.com/releases/20170911144938
+  INFO [52c56db4] Finished in 3.721 seconds with exit status 0 (successful).
+  INFO [ca31169c] Running cp -r /opt/sites/snippets.doe1915.com/bootstrap /opt/sites/snippets.doe1915.com/releases/20170911144938 as doe@snippets.doe1915.com
+ DEBUG [ca31169c] Command: cp -r /opt/sites/snippets.doe1915.com/bootstrap /opt/sites/snippets.doe1915.com/releases/20170911144938
+  INFO [ca31169c] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [1459ac2f] Running cp /opt/sites/snippets.doe1915.com/.env /opt/sites/snippets.doe1915.com/releases/20170911144938 as doe@snippets.doe1915.com
+ DEBUG [1459ac2f] Command: cp /opt/sites/snippets.doe1915.com/.env /opt/sites/snippets.doe1915.com/releases/20170911144938
+  INFO [1459ac2f] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [d467ef5f] Running cd /opt/sites/snippets.doe1915.com/releases/20170911144938/storage/logs/ && sudo touch laravel.log && sudo chown www-data:www-data laravel.log && sudo chmod 775 laravel.log as doe@snippets.doe1915.com
+ DEBUG [d467ef5f] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911144938/storage/logs/ && sudo touch laravel.log && sudo chown www-data:www-data laravel.log && sudo chmod 775 laravel.log
+  INFO [d467ef5f] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-11 11:02:58 -0400 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [bc19ac34] Running /usr/bin/env mkdir -p /tmp as doe@snippets.doe1915.com
+ DEBUG [bc19ac34] Command: /usr/bin/env mkdir -p /tmp
+  INFO [bc19ac34] Finished in 0.557 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 100.0%
+  INFO [eef2c67b] Running /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh as doe@snippets.doe1915.com
+ DEBUG [eef2c67b] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh
+  INFO [eef2c67b] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [904c8e9f] Running /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD as doe@snippets.doe1915.com
+ DEBUG [904c8e9f] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD )
+ DEBUG [904c8e9f] 	030ab2a84e6b43e1795735988a7f0a081d6f8f1b	HEAD
+  INFO [904c8e9f] Finished in 0.332 seconds with exit status 0 (successful).
+  INFO [47ff69e5] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [47ff69e5] Command: /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases
+  INFO [47ff69e5] Finished in 0.059 seconds with exit status 0 (successful).
+ DEBUG [40f25113] Running [ -f /opt/sites/snippets.doe1915.com/current/REVISION ] as doe@snippets.doe1915.com
+ DEBUG [40f25113] Command: [ -f /opt/sites/snippets.doe1915.com/current/REVISION ]
+ DEBUG [40f25113] Finished in 0.061 seconds with exit status 0 (successful).
+ DEBUG [8e8e05f6] Running /usr/bin/env cat /opt/sites/snippets.doe1915.com/current/REVISION 2>/dev/null as doe@snippets.doe1915.com
+ DEBUG [8e8e05f6] Command: /usr/bin/env cat /opt/sites/snippets.doe1915.com/current/REVISION 2>/dev/null
+ DEBUG [8e8e05f6] 	7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea
+ DEBUG [8e8e05f6] Finished in 0.096 seconds with exit status 0 (successful).
+ DEBUG [d8a09cb3] Running [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ] as doe@snippets.doe1915.com
+ DEBUG [d8a09cb3] Command: [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ]
+ DEBUG [d8a09cb3] Finished in 0.251 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /opt/sites/snippets.doe1915.com/repo
+ DEBUG [80a2032d] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [80a2032d] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [80a2032d] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [595473c5] Running /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets as doe@snippets.doe1915.com
+ DEBUG [595473c5] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets )
+  INFO [595473c5] Finished in 0.061 seconds with exit status 0 (successful).
+  INFO [9f6a380f] Running /usr/bin/env git remote update --prune as doe@snippets.doe1915.com
+ DEBUG [9f6a380f] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [9f6a380f] 	Fetching origin
+  INFO [9f6a380f] Finished in 0.470 seconds with exit status 0 (successful).
+ DEBUG [acccf9cc] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [acccf9cc] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [acccf9cc] Finished in 0.121 seconds with exit status 0 (successful).
+  INFO [f74c18a9] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170911150259 as doe@snippets.doe1915.com
+ DEBUG [f74c18a9] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170911150259 )
+  INFO [f74c18a9] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [d0d0ba16] Running /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170911150259 as doe@snippets.doe1915.com
+ DEBUG [d0d0ba16] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170911150259 )
+  INFO [d0d0ba16] Finished in 0.089 seconds with exit status 0 (successful).
+ DEBUG [da493d61] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [da493d61] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [da493d61] Finished in 0.062 seconds with exit status 0 (successful).
+ DEBUG [6c8111fe] Running /usr/bin/env git rev-list --max-count=1 deploy as doe@snippets.doe1915.com
+ DEBUG [6c8111fe] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git rev-list --max-count=1 deploy )
+ DEBUG [6c8111fe] 	7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea
+ DEBUG [6c8111fe] Finished in 0.148 seconds with exit status 0 (successful).
+ DEBUG [ca4a222b] Running if test ! -d /opt/sites/snippets.doe1915.com/releases/20170911150259; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases/20170911150259'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [ca4a222b] Command: if test ! -d /opt/sites/snippets.doe1915.com/releases/20170911150259; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases/20170911150259'" 1>&2; false; fi
+ DEBUG [ca4a222b] Finished in 0.082 seconds with exit status 0 (successful).
+  INFO [1354bf38] Running /usr/bin/env echo "7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea" >> REVISION as doe@snippets.doe1915.com
+ DEBUG [1354bf38] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911150259 && /usr/bin/env echo "7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea" >> REVISION
+  INFO [1354bf38] Finished in 0.061 seconds with exit status 0 (successful).
+  INFO [6eeb5848] Running /usr/bin/env ln -s /opt/sites/snippets.doe1915.com/releases/20170911150259 /opt/sites/snippets.doe1915.com/releases/current as doe@snippets.doe1915.com
+ DEBUG [6eeb5848] Command: /usr/bin/env ln -s /opt/sites/snippets.doe1915.com/releases/20170911150259 /opt/sites/snippets.doe1915.com/releases/current
+  INFO [6eeb5848] Finished in 0.074 seconds with exit status 0 (successful).
+  INFO [398010bf] Running /usr/bin/env mv /opt/sites/snippets.doe1915.com/releases/current /opt/sites/snippets.doe1915.com as doe@snippets.doe1915.com
+ DEBUG [398010bf] Command: /usr/bin/env mv /opt/sites/snippets.doe1915.com/releases/current /opt/sites/snippets.doe1915.com
+  INFO [398010bf] Finished in 0.139 seconds with exit status 0 (successful).
+ DEBUG [2ae0b18d] Running /usr/bin/env ls -x /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [2ae0b18d] Command: /usr/bin/env ls -x /opt/sites/snippets.doe1915.com/releases
+ DEBUG [2ae0b18d] 	20170911144938	20170911150259
+ DEBUG [2ae0b18d] Finished in 0.084 seconds with exit status 0 (successful).
+  INFO Keeping 1 of 2 deployed releases on snippets.doe1915.com
+  INFO [fe1279a5] Running /usr/bin/env rm -rf /opt/sites/snippets.doe1915.com/releases/20170911144938 as doe@snippets.doe1915.com
+ DEBUG [fe1279a5] Command: /usr/bin/env rm -rf /opt/sites/snippets.doe1915.com/releases/20170911144938
+  INFO [fe1279a5] Finished in 0.129 seconds with exit status 0 (successful).
+ DEBUG [8e4cdee1] Running if test ! -d /opt/sites/snippets.doe1915.com/releases; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [8e4cdee1] Command: if test ! -d /opt/sites/snippets.doe1915.com/releases; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases'" 1>&2; false; fi
+ DEBUG [8e4cdee1] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [9f5eda4a] Running /usr/bin/env echo "Branch deploy (at 7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea) deployed as release 20170911150259 by jlong" >> /opt/sites/snippets.doe1915.com/revisions.log as doe@snippets.doe1915.com
+ DEBUG [9f5eda4a] Command: cd /opt/sites/snippets.doe1915.com/releases && /usr/bin/env echo "Branch deploy (at 7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea) deployed as release 20170911150259 by jlong" >> /opt/sites/snippets.doe1915.com/revisions.log
+  INFO [9f5eda4a] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [c3342a42] Running cp -r /opt/sites/snippets.doe1915.com/vendor /opt/sites/snippets.doe1915.com/releases/20170911150259 as doe@snippets.doe1915.com
+ DEBUG [c3342a42] Command: cp -r /opt/sites/snippets.doe1915.com/vendor /opt/sites/snippets.doe1915.com/releases/20170911150259
+  INFO [c3342a42] Finished in 2.949 seconds with exit status 0 (successful).
+  INFO [128ddc61] Running cp -r /opt/sites/snippets.doe1915.com/bootstrap /opt/sites/snippets.doe1915.com/releases/20170911150259 as doe@snippets.doe1915.com
+ DEBUG [128ddc61] Command: cp -r /opt/sites/snippets.doe1915.com/bootstrap /opt/sites/snippets.doe1915.com/releases/20170911150259
+  INFO [128ddc61] Finished in 0.088 seconds with exit status 0 (successful).
+  INFO [48e89c17] Running cp /opt/sites/snippets.doe1915.com/.env /opt/sites/snippets.doe1915.com/releases/20170911150259 as doe@snippets.doe1915.com
+ DEBUG [48e89c17] Command: cp /opt/sites/snippets.doe1915.com/.env /opt/sites/snippets.doe1915.com/releases/20170911150259
+  INFO [48e89c17] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [a0e18e00] Running cd /opt/sites/snippets.doe1915.com/releases/20170911150259/storage/logs/ && sudo touch laravel.log && sudo chown www-data:www-data laravel.log && sudo chmod 775 laravel.log as doe@snippets.doe1915.com
+ DEBUG [a0e18e00] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911150259/storage/logs/ && sudo touch laravel.log && sudo chown www-data:www-data laravel.log && sudo chmod 775 laravel.log
+  INFO [a0e18e00] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-11 11:07:24 -0400 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [be78a129] Running /usr/bin/env mkdir -p /tmp as doe@snippets.doe1915.com
+ DEBUG [be78a129] Command: /usr/bin/env mkdir -p /tmp
+  INFO [be78a129] Finished in 0.651 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 100.0%
+  INFO [13b182e0] Running /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh as doe@snippets.doe1915.com
+ DEBUG [13b182e0] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh
+  INFO [13b182e0] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [c9b80958] Running /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD as doe@snippets.doe1915.com
+ DEBUG [c9b80958] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD )
+ DEBUG [c9b80958] 	030ab2a84e6b43e1795735988a7f0a081d6f8f1b	HEAD
+  INFO [c9b80958] Finished in 0.326 seconds with exit status 0 (successful).
+  INFO [857c5292] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [857c5292] Command: /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases
+  INFO [857c5292] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [efda6519] Running [ -f /opt/sites/snippets.doe1915.com/current/REVISION ] as doe@snippets.doe1915.com
+ DEBUG [efda6519] Command: [ -f /opt/sites/snippets.doe1915.com/current/REVISION ]
+ DEBUG [efda6519] Finished in 0.058 seconds with exit status 0 (successful).
+ DEBUG [c87c16a2] Running /usr/bin/env cat /opt/sites/snippets.doe1915.com/current/REVISION 2>/dev/null as doe@snippets.doe1915.com
+ DEBUG [c87c16a2] Command: /usr/bin/env cat /opt/sites/snippets.doe1915.com/current/REVISION 2>/dev/null
+ DEBUG [c87c16a2] 	7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea
+ DEBUG [c87c16a2] Finished in 0.056 seconds with exit status 0 (successful).
+ DEBUG [1e416798] Running [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ] as doe@snippets.doe1915.com
+ DEBUG [1e416798] Command: [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ]
+ DEBUG [1e416798] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /opt/sites/snippets.doe1915.com/repo
+ DEBUG [90bfbcb4] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [90bfbcb4] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [90bfbcb4] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [32549259] Running /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets as doe@snippets.doe1915.com
+ DEBUG [32549259] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets )
+  INFO [32549259] Finished in 0.061 seconds with exit status 0 (successful).
+  INFO [86298916] Running /usr/bin/env git remote update --prune as doe@snippets.doe1915.com
+ DEBUG [86298916] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [86298916] 	Fetching origin
+  INFO [86298916] Finished in 0.321 seconds with exit status 0 (successful).
+ DEBUG [a7717797] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [a7717797] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [a7717797] Finished in 0.073 seconds with exit status 0 (successful).
+  INFO [aa667d85] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170911150725 as doe@snippets.doe1915.com
+ DEBUG [aa667d85] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170911150725 )
+  INFO [aa667d85] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [9a099365] Running /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170911150725 as doe@snippets.doe1915.com
+ DEBUG [9a099365] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170911150725 )
+  INFO [9a099365] Finished in 0.084 seconds with exit status 0 (successful).
+ DEBUG [84fc8d48] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [84fc8d48] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [84fc8d48] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [b3a34b64] Running /usr/bin/env git rev-list --max-count=1 deploy as doe@snippets.doe1915.com
+ DEBUG [b3a34b64] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git rev-list --max-count=1 deploy )
+ DEBUG [b3a34b64] 	7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea
+ DEBUG [b3a34b64] Finished in 0.057 seconds with exit status 0 (successful).
+ DEBUG [d1601b9d] Running if test ! -d /opt/sites/snippets.doe1915.com/releases/20170911150725; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases/20170911150725'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [d1601b9d] Command: if test ! -d /opt/sites/snippets.doe1915.com/releases/20170911150725; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases/20170911150725'" 1>&2; false; fi
+ DEBUG [d1601b9d] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [600eeaf3] Running /usr/bin/env echo "7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea" >> REVISION as doe@snippets.doe1915.com
+ DEBUG [600eeaf3] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911150725 && /usr/bin/env echo "7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea" >> REVISION
+  INFO [600eeaf3] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [8cf409c4] Running /usr/bin/env ln -s /opt/sites/snippets.doe1915.com/releases/20170911150725 /opt/sites/snippets.doe1915.com/releases/current as doe@snippets.doe1915.com
+ DEBUG [8cf409c4] Command: /usr/bin/env ln -s /opt/sites/snippets.doe1915.com/releases/20170911150725 /opt/sites/snippets.doe1915.com/releases/current
+  INFO [8cf409c4] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [27fdb2fc] Running /usr/bin/env mv /opt/sites/snippets.doe1915.com/releases/current /opt/sites/snippets.doe1915.com as doe@snippets.doe1915.com
+ DEBUG [27fdb2fc] Command: /usr/bin/env mv /opt/sites/snippets.doe1915.com/releases/current /opt/sites/snippets.doe1915.com
+  INFO [27fdb2fc] Finished in 0.066 seconds with exit status 0 (successful).
+ DEBUG [414cbe5a] Running /usr/bin/env ls -x /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [414cbe5a] Command: /usr/bin/env ls -x /opt/sites/snippets.doe1915.com/releases
+ DEBUG [414cbe5a] 	20170911150259	20170911150725
+ DEBUG [414cbe5a] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO Keeping 1 of 2 deployed releases on snippets.doe1915.com
+  INFO [43406d89] Running /usr/bin/env rm -rf /opt/sites/snippets.doe1915.com/releases/20170911150259 as doe@snippets.doe1915.com
+ DEBUG [43406d89] Command: /usr/bin/env rm -rf /opt/sites/snippets.doe1915.com/releases/20170911150259
+  INFO [43406d89] Finished in 0.128 seconds with exit status 0 (successful).
+ DEBUG [00a5d8aa] Running if test ! -d /opt/sites/snippets.doe1915.com/releases; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [00a5d8aa] Command: if test ! -d /opt/sites/snippets.doe1915.com/releases; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases'" 1>&2; false; fi
+ DEBUG [00a5d8aa] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [9b99e890] Running /usr/bin/env echo "Branch deploy (at 7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea) deployed as release 20170911150725 by jlong" >> /opt/sites/snippets.doe1915.com/revisions.log as doe@snippets.doe1915.com
+ DEBUG [9b99e890] Command: cd /opt/sites/snippets.doe1915.com/releases && /usr/bin/env echo "Branch deploy (at 7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea) deployed as release 20170911150725 by jlong" >> /opt/sites/snippets.doe1915.com/revisions.log
+  INFO [9b99e890] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-11 11:22:30 -0400 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [d26563b6] Running /usr/bin/env mkdir -p /tmp as doe@snippets.doe1915.com
+ DEBUG [d26563b6] Command: /usr/bin/env mkdir -p /tmp
+  INFO [d26563b6] Finished in 0.603 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 100.0%
+  INFO [27df3d6c] Running /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh as doe@snippets.doe1915.com
+ DEBUG [27df3d6c] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh
+  INFO [27df3d6c] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [8486ef3a] Running /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD as doe@snippets.doe1915.com
+ DEBUG [8486ef3a] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD )
+ DEBUG [8486ef3a] 	030ab2a84e6b43e1795735988a7f0a081d6f8f1b	HEAD
+  INFO [8486ef3a] Finished in 0.348 seconds with exit status 0 (successful).
+  INFO [08d01e83] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [08d01e83] Command: /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases
+  INFO [08d01e83] Finished in 0.086 seconds with exit status 0 (successful).
+ DEBUG [d8b59569] Running [ -f /opt/sites/snippets.doe1915.com/current/REVISION ] as doe@snippets.doe1915.com
+ DEBUG [d8b59569] Command: [ -f /opt/sites/snippets.doe1915.com/current/REVISION ]
+ DEBUG [d8b59569] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [d7e7e651] Running /usr/bin/env cat /opt/sites/snippets.doe1915.com/current/REVISION 2>/dev/null as doe@snippets.doe1915.com
+ DEBUG [d7e7e651] Command: /usr/bin/env cat /opt/sites/snippets.doe1915.com/current/REVISION 2>/dev/null
+ DEBUG [d7e7e651] 	7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea
+ DEBUG [d7e7e651] Finished in 0.060 seconds with exit status 0 (successful).
+ DEBUG [61ba1624] Running [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ] as doe@snippets.doe1915.com
+ DEBUG [61ba1624] Command: [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ]
+ DEBUG [61ba1624] Finished in 0.065 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /opt/sites/snippets.doe1915.com/repo
+ DEBUG [1ce58033] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [1ce58033] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [1ce58033] Finished in 0.063 seconds with exit status 0 (successful).
+  INFO [0b84fe7d] Running /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets as doe@snippets.doe1915.com
+ DEBUG [0b84fe7d] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets )
+  INFO [0b84fe7d] Finished in 0.064 seconds with exit status 0 (successful).
+  INFO [a3107827] Running /usr/bin/env git remote update --prune as doe@snippets.doe1915.com
+ DEBUG [a3107827] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [a3107827] 	Fetching origin
+  INFO [a3107827] Finished in 0.352 seconds with exit status 0 (successful).
+ DEBUG [165897e5] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [165897e5] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [165897e5] Finished in 0.093 seconds with exit status 0 (successful).
+  INFO [af3b00ca] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170911152231 as doe@snippets.doe1915.com
+ DEBUG [af3b00ca] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170911152231 )
+  INFO [af3b00ca] Finished in 0.062 seconds with exit status 0 (successful).
+  INFO [d74b424c] Running /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170911152231 as doe@snippets.doe1915.com
+ DEBUG [d74b424c] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170911152231 )
+  INFO [d74b424c] Finished in 0.097 seconds with exit status 0 (successful).
+ DEBUG [27f664ef] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [27f664ef] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [27f664ef] Finished in 0.061 seconds with exit status 0 (successful).
+ DEBUG [48101848] Running /usr/bin/env git rev-list --max-count=1 deploy as doe@snippets.doe1915.com
+ DEBUG [48101848] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git rev-list --max-count=1 deploy )
+ DEBUG [48101848] 	7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea
+ DEBUG [48101848] Finished in 0.061 seconds with exit status 0 (successful).
+ DEBUG [b3385a7a] Running if test ! -d /opt/sites/snippets.doe1915.com/releases/20170911152231; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases/20170911152231'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [b3385a7a] Command: if test ! -d /opt/sites/snippets.doe1915.com/releases/20170911152231; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases/20170911152231'" 1>&2; false; fi
+ DEBUG [b3385a7a] Finished in 0.064 seconds with exit status 0 (successful).
+  INFO [0c5df950] Running /usr/bin/env echo "7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea" >> REVISION as doe@snippets.doe1915.com
+ DEBUG [0c5df950] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911152231 && /usr/bin/env echo "7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea" >> REVISION
+  INFO [0c5df950] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [2ca16607] Running /usr/bin/env ln -s /opt/sites/snippets.doe1915.com/releases/20170911152231 /opt/sites/snippets.doe1915.com/releases/current as doe@snippets.doe1915.com
+ DEBUG [2ca16607] Command: /usr/bin/env ln -s /opt/sites/snippets.doe1915.com/releases/20170911152231 /opt/sites/snippets.doe1915.com/releases/current
+  INFO [2ca16607] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [6e50cc8e] Running /usr/bin/env mv /opt/sites/snippets.doe1915.com/releases/current /opt/sites/snippets.doe1915.com as doe@snippets.doe1915.com
+ DEBUG [6e50cc8e] Command: /usr/bin/env mv /opt/sites/snippets.doe1915.com/releases/current /opt/sites/snippets.doe1915.com
+  INFO [6e50cc8e] Finished in 0.061 seconds with exit status 0 (successful).
+ DEBUG [6268a167] Running /usr/bin/env ls -x /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [6268a167] Command: /usr/bin/env ls -x /opt/sites/snippets.doe1915.com/releases
+ DEBUG [6268a167] 	20170911150725	20170911152231
+ DEBUG [6268a167] Finished in 0.059 seconds with exit status 0 (successful).
+  INFO Keeping 1 of 2 deployed releases on snippets.doe1915.com
+  INFO [f93297df] Running /usr/bin/env rm -rf /opt/sites/snippets.doe1915.com/releases/20170911150725 as doe@snippets.doe1915.com
+ DEBUG [f93297df] Command: /usr/bin/env rm -rf /opt/sites/snippets.doe1915.com/releases/20170911150725
+  INFO [f93297df] Finished in 0.086 seconds with exit status 0 (successful).
+ DEBUG [fa11a4f4] Running if test ! -d /opt/sites/snippets.doe1915.com/releases; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [fa11a4f4] Command: if test ! -d /opt/sites/snippets.doe1915.com/releases; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases'" 1>&2; false; fi
+ DEBUG [fa11a4f4] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [a7c71333] Running /usr/bin/env echo "Branch deploy (at 7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea) deployed as release 20170911152231 by jlong" >> /opt/sites/snippets.doe1915.com/revisions.log as doe@snippets.doe1915.com
+ DEBUG [a7c71333] Command: cd /opt/sites/snippets.doe1915.com/releases && /usr/bin/env echo "Branch deploy (at 7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea) deployed as release 20170911152231 by jlong" >> /opt/sites/snippets.doe1915.com/revisions.log
+  INFO [a7c71333] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [9c6c9f18] Running cp -r /opt/sites/snippets.doe1915.com/vendor /opt/sites/snippets.doe1915.com/releases/20170911152231 as doe@snippets.doe1915.com
+ DEBUG [9c6c9f18] Command: cp -r /opt/sites/snippets.doe1915.com/vendor /opt/sites/snippets.doe1915.com/releases/20170911152231
+  INFO [9c6c9f18] Finished in 3.186 seconds with exit status 0 (successful).
+  INFO [ce2b03ce] Running cp -r /opt/sites/snippets.doe1915.com/bootstrap /opt/sites/snippets.doe1915.com/releases/20170911152231 as doe@snippets.doe1915.com
+ DEBUG [ce2b03ce] Command: cp -r /opt/sites/snippets.doe1915.com/bootstrap /opt/sites/snippets.doe1915.com/releases/20170911152231
+  INFO [ce2b03ce] Finished in 0.060 seconds with exit status 0 (successful).
+  INFO [fdb5eaff] Running cp /opt/sites/snippets.doe1915.com/.env /opt/sites/snippets.doe1915.com/releases/20170911152231 as doe@snippets.doe1915.com
+ DEBUG [fdb5eaff] Command: cp /opt/sites/snippets.doe1915.com/.env /opt/sites/snippets.doe1915.com/releases/20170911152231
+  INFO [fdb5eaff] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [78c420e7] Running cd /opt/sites/snippets.doe1915.com/releases/20170911152231/storage/logs/ && sudo touch laravel.log && sudo chown www-data:www-data laravel.log && sudo chmod 775 laravel.log as doe@snippets.doe1915.com
+ DEBUG [78c420e7] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911152231/storage/logs/ && sudo touch laravel.log && sudo chown www-data:www-data laravel.log && sudo chmod 775 laravel.log
+  INFO [78c420e7] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [06ff6fef] Running cd /opt/sites/snippets.doe1915.com/releases/20170911152231 && php artisan route:clear && php artisan config:clear && php artisan view:clear as doe@snippets.doe1915.com
+ DEBUG [06ff6fef] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911152231 && php artisan route:clear && php artisan config:clear && php artisan view:clear
+ DEBUG [06ff6fef] 	Route cache cleared!
+ DEBUG [06ff6fef] 	
+ DEBUG [06ff6fef] 	Configuration cache cleared!
+ DEBUG [06ff6fef] 	
+ DEBUG [06ff6fef] 	Compiled views cleared!
+ DEBUG [06ff6fef] 	
+  INFO [06ff6fef] Finished in 0.488 seconds with exit status 0 (successful).
+  INFO [cd64a71e] Running sudo chmod -R 755 /opt/sites/snippets.doe1915.com/releases/20170911152231/storage/framework/ as doe@snippets.doe1915.com
+ DEBUG [cd64a71e] Command: sudo chmod -R 755 /opt/sites/snippets.doe1915.com/releases/20170911152231/storage/framework/
+  INFO [cd64a71e] Finished in 0.072 seconds with exit status 0 (successful).
+  INFO [6a797d77] Running scp -r public/css jlong@doe1915.com:/home/jlong as jlong@localhost
+ DEBUG [6a797d77] Command: scp -r public/css jlong@doe1915.com:/home/jlong
+ DEBUG [6a797d77] 	scp: /home/jlong/css/app.css: Permission denied
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-11 11:24:47 -0400 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [2b06408a] Running /usr/bin/env mkdir -p /tmp as doe@snippets.doe1915.com
+ DEBUG [2b06408a] Command: /usr/bin/env mkdir -p /tmp
+  INFO [2b06408a] Finished in 0.500 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 100.0%
+  INFO [fe9cab47] Running /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh as doe@snippets.doe1915.com
+ DEBUG [fe9cab47] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh
+  INFO [fe9cab47] Finished in 0.067 seconds with exit status 0 (successful).
+  INFO [67f98012] Running /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD as doe@snippets.doe1915.com
+ DEBUG [67f98012] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD )
+ DEBUG [67f98012] 	030ab2a84e6b43e1795735988a7f0a081d6f8f1b	HEAD
+  INFO [67f98012] Finished in 0.407 seconds with exit status 0 (successful).
+  INFO [0ffc05f0] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [0ffc05f0] Command: /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases
+  INFO [0ffc05f0] Finished in 0.060 seconds with exit status 0 (successful).
+ DEBUG [20ff5966] Running [ -f /opt/sites/snippets.doe1915.com/current/REVISION ] as doe@snippets.doe1915.com
+ DEBUG [20ff5966] Command: [ -f /opt/sites/snippets.doe1915.com/current/REVISION ]
+ DEBUG [20ff5966] Finished in 0.058 seconds with exit status 0 (successful).
+ DEBUG [cad83051] Running /usr/bin/env cat /opt/sites/snippets.doe1915.com/current/REVISION 2>/dev/null as doe@snippets.doe1915.com
+ DEBUG [cad83051] Command: /usr/bin/env cat /opt/sites/snippets.doe1915.com/current/REVISION 2>/dev/null
+ DEBUG [cad83051] 	7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea
+ DEBUG [cad83051] Finished in 0.059 seconds with exit status 0 (successful).
+ DEBUG [ab979c22] Running [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ] as doe@snippets.doe1915.com
+ DEBUG [ab979c22] Command: [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ]
+ DEBUG [ab979c22] Finished in 0.065 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /opt/sites/snippets.doe1915.com/repo
+ DEBUG [41cadd8c] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [41cadd8c] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [41cadd8c] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [ba81b472] Running /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets as doe@snippets.doe1915.com
+ DEBUG [ba81b472] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets )
+  INFO [ba81b472] Finished in 0.081 seconds with exit status 0 (successful).
+  INFO [3791bedc] Running /usr/bin/env git remote update --prune as doe@snippets.doe1915.com
+ DEBUG [3791bedc] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [3791bedc] 	Fetching origin
+  INFO [3791bedc] Finished in 0.364 seconds with exit status 0 (successful).
+ DEBUG [487da725] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [487da725] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [487da725] Finished in 0.080 seconds with exit status 0 (successful).
+  INFO [5128019c] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170911152449 as doe@snippets.doe1915.com
+ DEBUG [5128019c] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170911152449 )
+  INFO [5128019c] Finished in 0.060 seconds with exit status 0 (successful).
+  INFO [4b096b08] Running /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170911152449 as doe@snippets.doe1915.com
+ DEBUG [4b096b08] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170911152449 )
+  INFO [4b096b08] Finished in 0.103 seconds with exit status 0 (successful).
+ DEBUG [dd2d02b2] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [dd2d02b2] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [dd2d02b2] Finished in 0.060 seconds with exit status 0 (successful).
+ DEBUG [3bdcb5d4] Running /usr/bin/env git rev-list --max-count=1 deploy as doe@snippets.doe1915.com
+ DEBUG [3bdcb5d4] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git rev-list --max-count=1 deploy )
+ DEBUG [3bdcb5d4] 	7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea
+ DEBUG [3bdcb5d4] Finished in 0.065 seconds with exit status 0 (successful).
+ DEBUG [708fa867] Running if test ! -d /opt/sites/snippets.doe1915.com/releases/20170911152449; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases/20170911152449'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [708fa867] Command: if test ! -d /opt/sites/snippets.doe1915.com/releases/20170911152449; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases/20170911152449'" 1>&2; false; fi
+ DEBUG [708fa867] Finished in 0.059 seconds with exit status 0 (successful).
+  INFO [3f1b73b5] Running /usr/bin/env echo "7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea" >> REVISION as doe@snippets.doe1915.com
+ DEBUG [3f1b73b5] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911152449 && /usr/bin/env echo "7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea" >> REVISION
+  INFO [3f1b73b5] Finished in 0.060 seconds with exit status 0 (successful).
+  INFO [fe043a4c] Running /usr/bin/env ln -s /opt/sites/snippets.doe1915.com/releases/20170911152449 /opt/sites/snippets.doe1915.com/releases/current as doe@snippets.doe1915.com
+ DEBUG [fe043a4c] Command: /usr/bin/env ln -s /opt/sites/snippets.doe1915.com/releases/20170911152449 /opt/sites/snippets.doe1915.com/releases/current
+  INFO [fe043a4c] Finished in 0.060 seconds with exit status 0 (successful).
+  INFO [f49da996] Running /usr/bin/env mv /opt/sites/snippets.doe1915.com/releases/current /opt/sites/snippets.doe1915.com as doe@snippets.doe1915.com
+ DEBUG [f49da996] Command: /usr/bin/env mv /opt/sites/snippets.doe1915.com/releases/current /opt/sites/snippets.doe1915.com
+  INFO [f49da996] Finished in 0.064 seconds with exit status 0 (successful).
+ DEBUG [576e7fac] Running /usr/bin/env ls -x /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [576e7fac] Command: /usr/bin/env ls -x /opt/sites/snippets.doe1915.com/releases
+ DEBUG [576e7fac] 	20170911152231	20170911152449
+ DEBUG [576e7fac] Finished in 0.059 seconds with exit status 0 (successful).
+  INFO Keeping 1 of 2 deployed releases on snippets.doe1915.com
+  INFO [bf767986] Running /usr/bin/env rm -rf /opt/sites/snippets.doe1915.com/releases/20170911152231 as doe@snippets.doe1915.com
+ DEBUG [bf767986] Command: /usr/bin/env rm -rf /opt/sites/snippets.doe1915.com/releases/20170911152231
+  INFO [bf767986] Finished in 0.136 seconds with exit status 0 (successful).
+ DEBUG [190372c1] Running if test ! -d /opt/sites/snippets.doe1915.com/releases; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [190372c1] Command: if test ! -d /opt/sites/snippets.doe1915.com/releases; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases'" 1>&2; false; fi
+ DEBUG [190372c1] Finished in 0.059 seconds with exit status 0 (successful).
+  INFO [081af7bd] Running /usr/bin/env echo "Branch deploy (at 7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea) deployed as release 20170911152449 by jlong" >> /opt/sites/snippets.doe1915.com/revisions.log as doe@snippets.doe1915.com
+ DEBUG [081af7bd] Command: cd /opt/sites/snippets.doe1915.com/releases && /usr/bin/env echo "Branch deploy (at 7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea) deployed as release 20170911152449 by jlong" >> /opt/sites/snippets.doe1915.com/revisions.log
+  INFO [081af7bd] Finished in 0.061 seconds with exit status 0 (successful).
+  INFO [b633e5a4] Running cp -r /opt/sites/snippets.doe1915.com/vendor /opt/sites/snippets.doe1915.com/releases/20170911152449 as doe@snippets.doe1915.com
+ DEBUG [b633e5a4] Command: cp -r /opt/sites/snippets.doe1915.com/vendor /opt/sites/snippets.doe1915.com/releases/20170911152449
+  INFO [b633e5a4] Finished in 2.785 seconds with exit status 0 (successful).
+  INFO [f6c2592d] Running cp -r /opt/sites/snippets.doe1915.com/bootstrap /opt/sites/snippets.doe1915.com/releases/20170911152449 as doe@snippets.doe1915.com
+ DEBUG [f6c2592d] Command: cp -r /opt/sites/snippets.doe1915.com/bootstrap /opt/sites/snippets.doe1915.com/releases/20170911152449
+  INFO [f6c2592d] Finished in 0.061 seconds with exit status 0 (successful).
+  INFO [72f7bd67] Running cp /opt/sites/snippets.doe1915.com/.env /opt/sites/snippets.doe1915.com/releases/20170911152449 as doe@snippets.doe1915.com
+ DEBUG [72f7bd67] Command: cp /opt/sites/snippets.doe1915.com/.env /opt/sites/snippets.doe1915.com/releases/20170911152449
+  INFO [72f7bd67] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [4fca299f] Running cd /opt/sites/snippets.doe1915.com/releases/20170911152449/storage/logs/ && sudo touch laravel.log && sudo chown www-data:www-data laravel.log && sudo chmod 775 laravel.log as doe@snippets.doe1915.com
+ DEBUG [4fca299f] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911152449/storage/logs/ && sudo touch laravel.log && sudo chown www-data:www-data laravel.log && sudo chmod 775 laravel.log
+  INFO [4fca299f] Finished in 0.074 seconds with exit status 0 (successful).
+  INFO [0add0514] Running cd /opt/sites/snippets.doe1915.com/releases/20170911152449 && php artisan route:clear && php artisan config:clear && php artisan view:clear as doe@snippets.doe1915.com
+ DEBUG [0add0514] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911152449 && php artisan route:clear && php artisan config:clear && php artisan view:clear
+ DEBUG [0add0514] 	Route cache cleared!
+ DEBUG [0add0514] 	
+ DEBUG [0add0514] 	Configuration cache cleared!
+ DEBUG [0add0514] 	
+ DEBUG [0add0514] 	Compiled views cleared!
+ DEBUG [0add0514] 	
+  INFO [0add0514] Finished in 0.571 seconds with exit status 0 (successful).
+  INFO [e0ae85ec] Running sudo chmod -R 755 /opt/sites/snippets.doe1915.com/releases/20170911152449/storage/framework/ as doe@snippets.doe1915.com
+ DEBUG [e0ae85ec] Command: sudo chmod -R 755 /opt/sites/snippets.doe1915.com/releases/20170911152449/storage/framework/
+  INFO [e0ae85ec] Finished in 0.073 seconds with exit status 0 (successful).
+  INFO [8c92bd8c] Running scp -r public/css jlong@doe1915.com:/home/jlong as jlong@localhost
+ DEBUG [8c92bd8c] Command: scp -r public/css jlong@doe1915.com:/home/jlong
+ DEBUG [8c92bd8c] 	scp: /home/jlong/css/app.css: Permission denied
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-11 11:25:55 -0400 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [44bdbebd] Running /usr/bin/env mkdir -p /tmp as doe@snippets.doe1915.com
+ DEBUG [44bdbebd] Command: /usr/bin/env mkdir -p /tmp
+  INFO [44bdbebd] Finished in 0.522 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 100.0%
+  INFO [37888398] Running /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh as doe@snippets.doe1915.com
+ DEBUG [37888398] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh
+  INFO [37888398] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [735a402f] Running /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD as doe@snippets.doe1915.com
+ DEBUG [735a402f] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD )
+ DEBUG [735a402f] 	030ab2a84e6b43e1795735988a7f0a081d6f8f1b	HEAD
+  INFO [735a402f] Finished in 0.379 seconds with exit status 0 (successful).
+  INFO [98a84961] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [98a84961] Command: /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases
+  INFO [98a84961] Finished in 0.081 seconds with exit status 0 (successful).
+ DEBUG [096d5058] Running [ -f /opt/sites/snippets.doe1915.com/current/REVISION ] as doe@snippets.doe1915.com
+ DEBUG [096d5058] Command: [ -f /opt/sites/snippets.doe1915.com/current/REVISION ]
+ DEBUG [096d5058] Finished in 0.059 seconds with exit status 0 (successful).
+ DEBUG [e1c94d06] Running /usr/bin/env cat /opt/sites/snippets.doe1915.com/current/REVISION 2>/dev/null as doe@snippets.doe1915.com
+ DEBUG [e1c94d06] Command: /usr/bin/env cat /opt/sites/snippets.doe1915.com/current/REVISION 2>/dev/null
+ DEBUG [e1c94d06] 	7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea
+ DEBUG [e1c94d06] Finished in 0.057 seconds with exit status 0 (successful).
+ DEBUG [815ae9ec] Running [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ] as doe@snippets.doe1915.com
+ DEBUG [815ae9ec] Command: [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ]
+ DEBUG [815ae9ec] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /opt/sites/snippets.doe1915.com/repo
+ DEBUG [768554a8] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [768554a8] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [768554a8] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO [991f70d3] Running /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets as doe@snippets.doe1915.com
+ DEBUG [991f70d3] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets )
+  INFO [991f70d3] Finished in 0.066 seconds with exit status 0 (successful).
+  INFO [7271d3fa] Running /usr/bin/env git remote update --prune as doe@snippets.doe1915.com
+ DEBUG [7271d3fa] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [7271d3fa] 	Fetching origin
+  INFO [7271d3fa] Finished in 0.328 seconds with exit status 0 (successful).
+ DEBUG [1d1449d4] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [1d1449d4] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [1d1449d4] Finished in 0.075 seconds with exit status 0 (successful).
+  INFO [a4aa9220] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170911152557 as doe@snippets.doe1915.com
+ DEBUG [a4aa9220] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170911152557 )
+  INFO [a4aa9220] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [5e7ed843] Running /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170911152557 as doe@snippets.doe1915.com
+ DEBUG [5e7ed843] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170911152557 )
+  INFO [5e7ed843] Finished in 0.080 seconds with exit status 0 (successful).
+ DEBUG [6a1df5d6] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [6a1df5d6] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [6a1df5d6] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [5212b8bc] Running /usr/bin/env git rev-list --max-count=1 deploy as doe@snippets.doe1915.com
+ DEBUG [5212b8bc] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git rev-list --max-count=1 deploy )
+ DEBUG [5212b8bc] 	7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea
+ DEBUG [5212b8bc] Finished in 0.057 seconds with exit status 0 (successful).
+ DEBUG [454254ea] Running if test ! -d /opt/sites/snippets.doe1915.com/releases/20170911152557; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases/20170911152557'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [454254ea] Command: if test ! -d /opt/sites/snippets.doe1915.com/releases/20170911152557; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases/20170911152557'" 1>&2; false; fi
+ DEBUG [454254ea] Finished in 0.068 seconds with exit status 0 (successful).
+  INFO [b201adf4] Running /usr/bin/env echo "7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea" >> REVISION as doe@snippets.doe1915.com
+ DEBUG [b201adf4] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911152557 && /usr/bin/env echo "7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea" >> REVISION
+  INFO [b201adf4] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [14a95cf2] Running /usr/bin/env ln -s /opt/sites/snippets.doe1915.com/releases/20170911152557 /opt/sites/snippets.doe1915.com/releases/current as doe@snippets.doe1915.com
+ DEBUG [14a95cf2] Command: /usr/bin/env ln -s /opt/sites/snippets.doe1915.com/releases/20170911152557 /opt/sites/snippets.doe1915.com/releases/current
+  INFO [14a95cf2] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [16caed9d] Running /usr/bin/env mv /opt/sites/snippets.doe1915.com/releases/current /opt/sites/snippets.doe1915.com as doe@snippets.doe1915.com
+ DEBUG [16caed9d] Command: /usr/bin/env mv /opt/sites/snippets.doe1915.com/releases/current /opt/sites/snippets.doe1915.com
+  INFO [16caed9d] Finished in 0.061 seconds with exit status 0 (successful).
+ DEBUG [920f170a] Running /usr/bin/env ls -x /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [920f170a] Command: /usr/bin/env ls -x /opt/sites/snippets.doe1915.com/releases
+ DEBUG [920f170a] 	20170911152449	20170911152557
+ DEBUG [920f170a] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO Keeping 1 of 2 deployed releases on snippets.doe1915.com
+  INFO [5fd30d04] Running /usr/bin/env rm -rf /opt/sites/snippets.doe1915.com/releases/20170911152449 as doe@snippets.doe1915.com
+ DEBUG [5fd30d04] Command: /usr/bin/env rm -rf /opt/sites/snippets.doe1915.com/releases/20170911152449
+  INFO [5fd30d04] Finished in 0.244 seconds with exit status 0 (successful).
+ DEBUG [dcae5a8e] Running if test ! -d /opt/sites/snippets.doe1915.com/releases; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [dcae5a8e] Command: if test ! -d /opt/sites/snippets.doe1915.com/releases; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases'" 1>&2; false; fi
+ DEBUG [dcae5a8e] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [02ae31a2] Running /usr/bin/env echo "Branch deploy (at 7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea) deployed as release 20170911152557 by jlong" >> /opt/sites/snippets.doe1915.com/revisions.log as doe@snippets.doe1915.com
+ DEBUG [02ae31a2] Command: cd /opt/sites/snippets.doe1915.com/releases && /usr/bin/env echo "Branch deploy (at 7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea) deployed as release 20170911152557 by jlong" >> /opt/sites/snippets.doe1915.com/revisions.log
+  INFO [02ae31a2] Finished in 0.059 seconds with exit status 0 (successful).
+  INFO [820e63fe] Running cp -r /opt/sites/snippets.doe1915.com/vendor /opt/sites/snippets.doe1915.com/releases/20170911152557 as doe@snippets.doe1915.com
+ DEBUG [820e63fe] Command: cp -r /opt/sites/snippets.doe1915.com/vendor /opt/sites/snippets.doe1915.com/releases/20170911152557
+  INFO [820e63fe] Finished in 1.762 seconds with exit status 0 (successful).
+  INFO [40069db2] Running cp -r /opt/sites/snippets.doe1915.com/bootstrap /opt/sites/snippets.doe1915.com/releases/20170911152557 as doe@snippets.doe1915.com
+ DEBUG [40069db2] Command: cp -r /opt/sites/snippets.doe1915.com/bootstrap /opt/sites/snippets.doe1915.com/releases/20170911152557
+  INFO [40069db2] Finished in 0.064 seconds with exit status 0 (successful).
+  INFO [dfa48de1] Running cp /opt/sites/snippets.doe1915.com/.env /opt/sites/snippets.doe1915.com/releases/20170911152557 as doe@snippets.doe1915.com
+ DEBUG [dfa48de1] Command: cp /opt/sites/snippets.doe1915.com/.env /opt/sites/snippets.doe1915.com/releases/20170911152557
+  INFO [dfa48de1] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [1107e458] Running cd /opt/sites/snippets.doe1915.com/releases/20170911152557/storage/logs/ && sudo touch laravel.log && sudo chown www-data:www-data laravel.log && sudo chmod 775 laravel.log as doe@snippets.doe1915.com
+ DEBUG [1107e458] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911152557/storage/logs/ && sudo touch laravel.log && sudo chown www-data:www-data laravel.log && sudo chmod 775 laravel.log
+  INFO [1107e458] Finished in 0.089 seconds with exit status 0 (successful).
+  INFO [3e008535] Running cd /opt/sites/snippets.doe1915.com/releases/20170911152557 && php artisan route:clear && php artisan config:clear && php artisan view:clear as doe@snippets.doe1915.com
+ DEBUG [3e008535] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911152557 && php artisan route:clear && php artisan config:clear && php artisan view:clear
+ DEBUG [3e008535] 	Route cache cleared!
+ DEBUG [3e008535] 	
+ DEBUG [3e008535] 	Configuration cache cleared!
+ DEBUG [3e008535] 	
+ DEBUG [3e008535] 	Compiled views cleared!
+ DEBUG [3e008535] 	
+  INFO [3e008535] Finished in 0.525 seconds with exit status 0 (successful).
+  INFO [7ef62a0a] Running sudo chmod -R 755 /opt/sites/snippets.doe1915.com/releases/20170911152557/storage/framework/ as doe@snippets.doe1915.com
+ DEBUG [7ef62a0a] Command: sudo chmod -R 755 /opt/sites/snippets.doe1915.com/releases/20170911152557/storage/framework/
+  INFO [7ef62a0a] Finished in 0.106 seconds with exit status 0 (successful).
+  INFO [ed729b78] Running scp -r public/css jlong@doe1915.com:/home/jlong as jlong@localhost
+ DEBUG [ed729b78] Command: scp -r public/css jlong@doe1915.com:/home/jlong
+ DEBUG [ed729b78] 	scp: /home/jlong/css/app.css: Permission denied
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-11 11:26:13 -0400 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [9554f364] Running /usr/bin/env mkdir -p /tmp as doe@snippets.doe1915.com
+ DEBUG [9554f364] Command: /usr/bin/env mkdir -p /tmp
+  INFO [9554f364] Finished in 0.499 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 100.0%
+  INFO [68e05276] Running /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh as doe@snippets.doe1915.com
+ DEBUG [68e05276] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh
+  INFO [68e05276] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [39b5837d] Running /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD as doe@snippets.doe1915.com
+ DEBUG [39b5837d] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD )
+ DEBUG [39b5837d] 	030ab2a84e6b43e1795735988a7f0a081d6f8f1b	HEAD
+  INFO [39b5837d] Finished in 0.327 seconds with exit status 0 (successful).
+  INFO [c5a4076c] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [c5a4076c] Command: /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases
+  INFO [c5a4076c] Finished in 0.084 seconds with exit status 0 (successful).
+ DEBUG [8a6a2079] Running [ -f /opt/sites/snippets.doe1915.com/current/REVISION ] as doe@snippets.doe1915.com
+ DEBUG [8a6a2079] Command: [ -f /opt/sites/snippets.doe1915.com/current/REVISION ]
+ DEBUG [8a6a2079] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [79c49c1b] Running /usr/bin/env cat /opt/sites/snippets.doe1915.com/current/REVISION 2>/dev/null as doe@snippets.doe1915.com
+ DEBUG [79c49c1b] Command: /usr/bin/env cat /opt/sites/snippets.doe1915.com/current/REVISION 2>/dev/null
+ DEBUG [79c49c1b] 	7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea
+ DEBUG [79c49c1b] Finished in 0.056 seconds with exit status 0 (successful).
+ DEBUG [f860729d] Running [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ] as doe@snippets.doe1915.com
+ DEBUG [f860729d] Command: [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ]
+ DEBUG [f860729d] Finished in 0.062 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /opt/sites/snippets.doe1915.com/repo
+ DEBUG [f15e9501] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [f15e9501] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [f15e9501] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [2267eb06] Running /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets as doe@snippets.doe1915.com
+ DEBUG [2267eb06] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets )
+  INFO [2267eb06] Finished in 0.065 seconds with exit status 0 (successful).
+  INFO [13deba32] Running /usr/bin/env git remote update --prune as doe@snippets.doe1915.com
+ DEBUG [13deba32] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [13deba32] 	Fetching origin
+  INFO [13deba32] Finished in 0.354 seconds with exit status 0 (successful).
+ DEBUG [bd76a959] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [bd76a959] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [bd76a959] Finished in 0.081 seconds with exit status 0 (successful).
+  INFO [c0ef5f93] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170911152615 as doe@snippets.doe1915.com
+ DEBUG [c0ef5f93] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170911152615 )
+  INFO [c0ef5f93] Finished in 0.059 seconds with exit status 0 (successful).
+  INFO [654713b5] Running /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170911152615 as doe@snippets.doe1915.com
+ DEBUG [654713b5] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170911152615 )
+  INFO [654713b5] Finished in 0.082 seconds with exit status 0 (successful).
+ DEBUG [e41e238c] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [e41e238c] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [e41e238c] Finished in 0.060 seconds with exit status 0 (successful).
+ DEBUG [e33c8a28] Running /usr/bin/env git rev-list --max-count=1 deploy as doe@snippets.doe1915.com
+ DEBUG [e33c8a28] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git rev-list --max-count=1 deploy )
+ DEBUG [e33c8a28] 	7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea
+ DEBUG [e33c8a28] Finished in 0.060 seconds with exit status 0 (successful).
+ DEBUG [d145ebe5] Running if test ! -d /opt/sites/snippets.doe1915.com/releases/20170911152615; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases/20170911152615'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [d145ebe5] Command: if test ! -d /opt/sites/snippets.doe1915.com/releases/20170911152615; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases/20170911152615'" 1>&2; false; fi
+ DEBUG [d145ebe5] Finished in 0.062 seconds with exit status 0 (successful).
+  INFO [8655ca94] Running /usr/bin/env echo "7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea" >> REVISION as doe@snippets.doe1915.com
+ DEBUG [8655ca94] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911152615 && /usr/bin/env echo "7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea" >> REVISION
+  INFO [8655ca94] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [91ea2910] Running /usr/bin/env ln -s /opt/sites/snippets.doe1915.com/releases/20170911152615 /opt/sites/snippets.doe1915.com/releases/current as doe@snippets.doe1915.com
+ DEBUG [91ea2910] Command: /usr/bin/env ln -s /opt/sites/snippets.doe1915.com/releases/20170911152615 /opt/sites/snippets.doe1915.com/releases/current
+  INFO [91ea2910] Finished in 0.060 seconds with exit status 0 (successful).
+  INFO [773e8a7a] Running /usr/bin/env mv /opt/sites/snippets.doe1915.com/releases/current /opt/sites/snippets.doe1915.com as doe@snippets.doe1915.com
+ DEBUG [773e8a7a] Command: /usr/bin/env mv /opt/sites/snippets.doe1915.com/releases/current /opt/sites/snippets.doe1915.com
+  INFO [773e8a7a] Finished in 0.057 seconds with exit status 0 (successful).
+ DEBUG [46e34a23] Running /usr/bin/env ls -x /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [46e34a23] Command: /usr/bin/env ls -x /opt/sites/snippets.doe1915.com/releases
+ DEBUG [46e34a23] 	20170911152557	20170911152615
+ DEBUG [46e34a23] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO Keeping 1 of 2 deployed releases on snippets.doe1915.com
+  INFO [33e05bb8] Running /usr/bin/env rm -rf /opt/sites/snippets.doe1915.com/releases/20170911152557 as doe@snippets.doe1915.com
+ DEBUG [33e05bb8] Command: /usr/bin/env rm -rf /opt/sites/snippets.doe1915.com/releases/20170911152557
+  INFO [33e05bb8] Finished in 0.128 seconds with exit status 0 (successful).
+ DEBUG [262dc2aa] Running if test ! -d /opt/sites/snippets.doe1915.com/releases; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [262dc2aa] Command: if test ! -d /opt/sites/snippets.doe1915.com/releases; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases'" 1>&2; false; fi
+ DEBUG [262dc2aa] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [94a7a836] Running /usr/bin/env echo "Branch deploy (at 7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea) deployed as release 20170911152615 by jlong" >> /opt/sites/snippets.doe1915.com/revisions.log as doe@snippets.doe1915.com
+ DEBUG [94a7a836] Command: cd /opt/sites/snippets.doe1915.com/releases && /usr/bin/env echo "Branch deploy (at 7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea) deployed as release 20170911152615 by jlong" >> /opt/sites/snippets.doe1915.com/revisions.log
+  INFO [94a7a836] Finished in 0.060 seconds with exit status 0 (successful).
+  INFO [58555124] Running cp -r /opt/sites/snippets.doe1915.com/vendor /opt/sites/snippets.doe1915.com/releases/20170911152615 as doe@snippets.doe1915.com
+ DEBUG [58555124] Command: cp -r /opt/sites/snippets.doe1915.com/vendor /opt/sites/snippets.doe1915.com/releases/20170911152615
+  INFO [58555124] Finished in 1.841 seconds with exit status 0 (successful).
+  INFO [9fbd928a] Running cp -r /opt/sites/snippets.doe1915.com/bootstrap /opt/sites/snippets.doe1915.com/releases/20170911152615 as doe@snippets.doe1915.com
+ DEBUG [9fbd928a] Command: cp -r /opt/sites/snippets.doe1915.com/bootstrap /opt/sites/snippets.doe1915.com/releases/20170911152615
+  INFO [9fbd928a] Finished in 0.064 seconds with exit status 0 (successful).
+  INFO [8a0b7ebe] Running cp /opt/sites/snippets.doe1915.com/.env /opt/sites/snippets.doe1915.com/releases/20170911152615 as doe@snippets.doe1915.com
+ DEBUG [8a0b7ebe] Command: cp /opt/sites/snippets.doe1915.com/.env /opt/sites/snippets.doe1915.com/releases/20170911152615
+  INFO [8a0b7ebe] Finished in 0.064 seconds with exit status 0 (successful).
+  INFO [32e7a774] Running cd /opt/sites/snippets.doe1915.com/releases/20170911152615/storage/logs/ && sudo touch laravel.log && sudo chown www-data:www-data laravel.log && sudo chmod 775 laravel.log as doe@snippets.doe1915.com
+ DEBUG [32e7a774] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911152615/storage/logs/ && sudo touch laravel.log && sudo chown www-data:www-data laravel.log && sudo chmod 775 laravel.log
+  INFO [32e7a774] Finished in 0.077 seconds with exit status 0 (successful).
+  INFO [b07d975d] Running cd /opt/sites/snippets.doe1915.com/releases/20170911152615 && php artisan route:clear && php artisan config:clear && php artisan view:clear as doe@snippets.doe1915.com
+ DEBUG [b07d975d] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911152615 && php artisan route:clear && php artisan config:clear && php artisan view:clear
+ DEBUG [b07d975d] 	Route cache cleared!
+ DEBUG [b07d975d] 	
+ DEBUG [b07d975d] 	Configuration cache cleared!
+ DEBUG [b07d975d] 	
+ DEBUG [b07d975d] 	Compiled views cleared!
+ DEBUG [b07d975d] 	
+  INFO [b07d975d] Finished in 0.506 seconds with exit status 0 (successful).
+  INFO [a115101c] Running sudo chmod -R 755 /opt/sites/snippets.doe1915.com/releases/20170911152615/storage/framework/ as doe@snippets.doe1915.com
+ DEBUG [a115101c] Command: sudo chmod -R 755 /opt/sites/snippets.doe1915.com/releases/20170911152615/storage/framework/
+  INFO [a115101c] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-11 11:34:24 -0400 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [9474c737] Running /usr/bin/env mkdir -p /tmp as doe@snippets.doe1915.com
+ DEBUG [9474c737] Command: /usr/bin/env mkdir -p /tmp
+  INFO [9474c737] Finished in 0.606 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 100.0%
+  INFO [4c6cf6a8] Running /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh as doe@snippets.doe1915.com
+ DEBUG [4c6cf6a8] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh
+  INFO [4c6cf6a8] Finished in 0.068 seconds with exit status 0 (successful).
+  INFO [98f45d55] Running /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD as doe@snippets.doe1915.com
+ DEBUG [98f45d55] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD )
+ DEBUG [98f45d55] 	030ab2a84e6b43e1795735988a7f0a081d6f8f1b	HEAD
+  INFO [98f45d55] Finished in 0.326 seconds with exit status 0 (successful).
+  INFO [554741ec] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [554741ec] Command: /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases
+  INFO [554741ec] Finished in 0.077 seconds with exit status 0 (successful).
+ DEBUG [59ce34cd] Running [ -f /opt/sites/snippets.doe1915.com/current/REVISION ] as doe@snippets.doe1915.com
+ DEBUG [59ce34cd] Command: [ -f /opt/sites/snippets.doe1915.com/current/REVISION ]
+ DEBUG [59ce34cd] Finished in 0.053 seconds with exit status 1 (failed).
+ DEBUG [4656b4fa] Running [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ] as doe@snippets.doe1915.com
+ DEBUG [4656b4fa] Command: [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ]
+ DEBUG [4656b4fa] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /opt/sites/snippets.doe1915.com/repo
+ DEBUG [c0ec3e1b] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [c0ec3e1b] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [c0ec3e1b] Finished in 0.064 seconds with exit status 0 (successful).
+  INFO [f3a15321] Running /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets as doe@snippets.doe1915.com
+ DEBUG [f3a15321] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets )
+  INFO [f3a15321] Finished in 0.151 seconds with exit status 0 (successful).
+  INFO [1c6b3e06] Running /usr/bin/env git remote update --prune as doe@snippets.doe1915.com
+ DEBUG [1c6b3e06] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [1c6b3e06] 	Fetching origin
+  INFO [1c6b3e06] Finished in 0.348 seconds with exit status 0 (successful).
+ DEBUG [2f50defc] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [2f50defc] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [2f50defc] Finished in 0.088 seconds with exit status 0 (successful).
+  INFO [1faab00b] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170911153425 as doe@snippets.doe1915.com
+ DEBUG [1faab00b] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170911153425 )
+  INFO [1faab00b] Finished in 0.140 seconds with exit status 0 (successful).
+  INFO [a9221b90] Running /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170911153425 as doe@snippets.doe1915.com
+ DEBUG [a9221b90] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170911153425 )
+  INFO [a9221b90] Finished in 0.090 seconds with exit status 0 (successful).
+ DEBUG [a0f34b75] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [a0f34b75] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [a0f34b75] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [2e504606] Running /usr/bin/env git rev-list --max-count=1 deploy as doe@snippets.doe1915.com
+ DEBUG [2e504606] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git rev-list --max-count=1 deploy )
+ DEBUG [2e504606] 	7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea
+ DEBUG [2e504606] Finished in 0.058 seconds with exit status 0 (successful).
+ DEBUG [e2e17ca0] Running if test ! -d /opt/sites/snippets.doe1915.com/releases/20170911153425; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases/20170911153425'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [e2e17ca0] Command: if test ! -d /opt/sites/snippets.doe1915.com/releases/20170911153425; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases/20170911153425'" 1>&2; false; fi
+ DEBUG [e2e17ca0] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [ded0b43f] Running /usr/bin/env echo "7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea" >> REVISION as doe@snippets.doe1915.com
+ DEBUG [ded0b43f] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911153425 && /usr/bin/env echo "7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea" >> REVISION
+  INFO [ded0b43f] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [9fe00406] Running /usr/bin/env ln -s /opt/sites/snippets.doe1915.com/releases/20170911153425 /opt/sites/snippets.doe1915.com/releases/current as doe@snippets.doe1915.com
+ DEBUG [9fe00406] Command: /usr/bin/env ln -s /opt/sites/snippets.doe1915.com/releases/20170911153425 /opt/sites/snippets.doe1915.com/releases/current
+  INFO [9fe00406] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [f7de2fc1] Running /usr/bin/env mv /opt/sites/snippets.doe1915.com/releases/current /opt/sites/snippets.doe1915.com as doe@snippets.doe1915.com
+ DEBUG [f7de2fc1] Command: /usr/bin/env mv /opt/sites/snippets.doe1915.com/releases/current /opt/sites/snippets.doe1915.com
+  INFO [f7de2fc1] Finished in 0.057 seconds with exit status 0 (successful).
+ DEBUG [eb9c2aca] Running /usr/bin/env ls -x /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [eb9c2aca] Command: /usr/bin/env ls -x /opt/sites/snippets.doe1915.com/releases
+ DEBUG [eb9c2aca] 	20170911153425
+ DEBUG [eb9c2aca] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO Keeping 1 of 1 deployed releases on snippets.doe1915.com
+  INFO No old releases (keeping newest 1) on snippets.doe1915.com
+ DEBUG [4176df80] Running if test ! -d /opt/sites/snippets.doe1915.com/releases; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [4176df80] Command: if test ! -d /opt/sites/snippets.doe1915.com/releases; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases'" 1>&2; false; fi
+ DEBUG [4176df80] Finished in 0.053 seconds with exit status 0 (successful).
+  INFO [9cf3ab58] Running /usr/bin/env echo "Branch deploy (at 7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea) deployed as release 20170911153425 by jlong" >> /opt/sites/snippets.doe1915.com/revisions.log as doe@snippets.doe1915.com
+ DEBUG [9cf3ab58] Command: cd /opt/sites/snippets.doe1915.com/releases && /usr/bin/env echo "Branch deploy (at 7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea) deployed as release 20170911153425 by jlong" >> /opt/sites/snippets.doe1915.com/revisions.log
+  INFO [9cf3ab58] Finished in 0.175 seconds with exit status 0 (successful).
+  INFO [3adde900] Running cp -r /opt/sites/snippets.doe1915.com/vendor /opt/sites/snippets.doe1915.com/releases/20170911153425 as doe@snippets.doe1915.com
+ DEBUG [3adde900] Command: cp -r /opt/sites/snippets.doe1915.com/vendor /opt/sites/snippets.doe1915.com/releases/20170911153425
+  INFO [3adde900] Finished in 2.964 seconds with exit status 0 (successful).
+  INFO [ca16d38a] Running cp -r /opt/sites/snippets.doe1915.com/bootstrap /opt/sites/snippets.doe1915.com/releases/20170911153425 as doe@snippets.doe1915.com
+ DEBUG [ca16d38a] Command: cp -r /opt/sites/snippets.doe1915.com/bootstrap /opt/sites/snippets.doe1915.com/releases/20170911153425
+  INFO [ca16d38a] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [8a677de4] Running cp /opt/sites/snippets.doe1915.com/.env /opt/sites/snippets.doe1915.com/releases/20170911153425 as doe@snippets.doe1915.com
+ DEBUG [8a677de4] Command: cp /opt/sites/snippets.doe1915.com/.env /opt/sites/snippets.doe1915.com/releases/20170911153425
+  INFO [8a677de4] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [398fc71c] Running cd /opt/sites/snippets.doe1915.com/releases/20170911153425/storage/logs/ && sudo touch laravel.log && sudo chown www-data:www-data laravel.log && sudo chmod 775 laravel.log as doe@snippets.doe1915.com
+ DEBUG [398fc71c] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911153425/storage/logs/ && sudo touch laravel.log && sudo chown www-data:www-data laravel.log && sudo chmod 775 laravel.log
+  INFO [398fc71c] Finished in 0.084 seconds with exit status 0 (successful).
+  INFO [098fc4bc] Running cd /opt/sites/snippets.doe1915.com/releases/20170911153425 && php artisan route:clear && php artisan config:clear && php artisan view:clear as doe@snippets.doe1915.com
+ DEBUG [098fc4bc] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911153425 && php artisan route:clear && php artisan config:clear && php artisan view:clear
+ DEBUG [098fc4bc] 	Route cache cleared!
+ DEBUG [098fc4bc] 	
+ DEBUG [098fc4bc] 	Configuration cache cleared!
+ DEBUG [098fc4bc] 	
+ DEBUG [098fc4bc] 	Compiled views cleared!
+ DEBUG [098fc4bc] 	
+  INFO [098fc4bc] Finished in 0.523 seconds with exit status 0 (successful).
+  INFO [d1aa00f7] Running sudo chmod -R 755 /opt/sites/snippets.doe1915.com/releases/20170911153425/storage/framework/ as doe@snippets.doe1915.com
+ DEBUG [d1aa00f7] Command: sudo chmod -R 755 /opt/sites/snippets.doe1915.com/releases/20170911153425/storage/framework/
+  INFO [d1aa00f7] Finished in 0.065 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-11 12:00:37 -0400 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [7885cd27] Running /usr/bin/env mkdir -p /tmp as doe@snippets.doe1915.com
+ DEBUG [7885cd27] Command: /usr/bin/env mkdir -p /tmp
+  INFO [7885cd27] Finished in 0.536 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 100.0%
+  INFO [aaa0cf25] Running /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh as doe@snippets.doe1915.com
+ DEBUG [aaa0cf25] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh
+  INFO [aaa0cf25] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [c9dd0096] Running /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD as doe@snippets.doe1915.com
+ DEBUG [c9dd0096] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD )
+ DEBUG [c9dd0096] 	030ab2a84e6b43e1795735988a7f0a081d6f8f1b	HEAD
+  INFO [c9dd0096] Finished in 0.331 seconds with exit status 0 (successful).
+  INFO [e15250c2] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [e15250c2] Command: /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases
+  INFO [e15250c2] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [91ed49fb] Running [ -f /opt/sites/snippets.doe1915.com/current/REVISION ] as doe@snippets.doe1915.com
+ DEBUG [91ed49fb] Command: [ -f /opt/sites/snippets.doe1915.com/current/REVISION ]
+ DEBUG [91ed49fb] Finished in 0.054 seconds with exit status 1 (failed).
+ DEBUG [444c8bd6] Running [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ] as doe@snippets.doe1915.com
+ DEBUG [444c8bd6] Command: [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ]
+ DEBUG [444c8bd6] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /opt/sites/snippets.doe1915.com/repo
+ DEBUG [15c29a2e] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [15c29a2e] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [15c29a2e] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO [8925fb2e] Running /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets as doe@snippets.doe1915.com
+ DEBUG [8925fb2e] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets )
+  INFO [8925fb2e] Finished in 0.062 seconds with exit status 0 (successful).
+  INFO [801c5255] Running /usr/bin/env git remote update --prune as doe@snippets.doe1915.com
+ DEBUG [801c5255] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [801c5255] 	Fetching origin
+  INFO [801c5255] Finished in 0.336 seconds with exit status 0 (successful).
+ DEBUG [55345f7b] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [55345f7b] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [55345f7b] Finished in 0.075 seconds with exit status 0 (successful).
+  INFO [238ceb09] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170911160038 as doe@snippets.doe1915.com
+ DEBUG [238ceb09] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170911160038 )
+  INFO [238ceb09] Finished in 0.060 seconds with exit status 0 (successful).
+  INFO [0a4eca3f] Running /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170911160038 as doe@snippets.doe1915.com
+ DEBUG [0a4eca3f] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170911160038 )
+  INFO [0a4eca3f] Finished in 0.085 seconds with exit status 0 (successful).
+ DEBUG [d6502ffa] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [d6502ffa] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [d6502ffa] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [bd59f088] Running /usr/bin/env git rev-list --max-count=1 deploy as doe@snippets.doe1915.com
+ DEBUG [bd59f088] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git rev-list --max-count=1 deploy )
+ DEBUG [bd59f088] 	7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea
+ DEBUG [bd59f088] Finished in 0.057 seconds with exit status 0 (successful).
+ DEBUG [1fde5075] Running if test ! -d /opt/sites/snippets.doe1915.com/releases/20170911160038; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases/20170911160038'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [1fde5075] Command: if test ! -d /opt/sites/snippets.doe1915.com/releases/20170911160038; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases/20170911160038'" 1>&2; false; fi
+ DEBUG [1fde5075] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [95c69ccc] Running /usr/bin/env echo "7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea" >> REVISION as doe@snippets.doe1915.com
+ DEBUG [95c69ccc] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911160038 && /usr/bin/env echo "7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea" >> REVISION
+  INFO [95c69ccc] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [4c11fd8c] Running /usr/bin/env ln -s /opt/sites/snippets.doe1915.com/releases/20170911160038 /opt/sites/snippets.doe1915.com/releases/current as doe@snippets.doe1915.com
+ DEBUG [4c11fd8c] Command: /usr/bin/env ln -s /opt/sites/snippets.doe1915.com/releases/20170911160038 /opt/sites/snippets.doe1915.com/releases/current
+  INFO [4c11fd8c] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [b2487b6a] Running /usr/bin/env mv /opt/sites/snippets.doe1915.com/releases/current /opt/sites/snippets.doe1915.com as doe@snippets.doe1915.com
+ DEBUG [b2487b6a] Command: /usr/bin/env mv /opt/sites/snippets.doe1915.com/releases/current /opt/sites/snippets.doe1915.com
+  INFO [b2487b6a] Finished in 0.057 seconds with exit status 0 (successful).
+ DEBUG [52c877ba] Running /usr/bin/env ls -x /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [52c877ba] Command: /usr/bin/env ls -x /opt/sites/snippets.doe1915.com/releases
+ DEBUG [52c877ba] 	20170911160038
+ DEBUG [52c877ba] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO Keeping 1 of 1 deployed releases on snippets.doe1915.com
+  INFO No old releases (keeping newest 1) on snippets.doe1915.com
+ DEBUG [8fc2a258] Running if test ! -d /opt/sites/snippets.doe1915.com/releases; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [8fc2a258] Command: if test ! -d /opt/sites/snippets.doe1915.com/releases; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases'" 1>&2; false; fi
+ DEBUG [8fc2a258] Finished in 0.059 seconds with exit status 0 (successful).
+  INFO [91400e7d] Running /usr/bin/env echo "Branch deploy (at 7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea) deployed as release 20170911160038 by jlong" >> /opt/sites/snippets.doe1915.com/revisions.log as doe@snippets.doe1915.com
+ DEBUG [91400e7d] Command: cd /opt/sites/snippets.doe1915.com/releases && /usr/bin/env echo "Branch deploy (at 7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea) deployed as release 20170911160038 by jlong" >> /opt/sites/snippets.doe1915.com/revisions.log
+  INFO [91400e7d] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [b83450c1] Running cp -r /opt/sites/snippets.doe1915.com/vendor /opt/sites/snippets.doe1915.com/releases/20170911160038 as doe@snippets.doe1915.com
+ DEBUG [b83450c1] Command: cp -r /opt/sites/snippets.doe1915.com/vendor /opt/sites/snippets.doe1915.com/releases/20170911160038
+  INFO [b83450c1] Finished in 2.851 seconds with exit status 0 (successful).
+  INFO [0c3667cd] Running cp -r /opt/sites/snippets.doe1915.com/bootstrap /opt/sites/snippets.doe1915.com/releases/20170911160038 as doe@snippets.doe1915.com
+ DEBUG [0c3667cd] Command: cp -r /opt/sites/snippets.doe1915.com/bootstrap /opt/sites/snippets.doe1915.com/releases/20170911160038
+  INFO [0c3667cd] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [9d378ead] Running cp /opt/sites/snippets.doe1915.com/.env /opt/sites/snippets.doe1915.com/releases/20170911160038 as doe@snippets.doe1915.com
+ DEBUG [9d378ead] Command: cp /opt/sites/snippets.doe1915.com/.env /opt/sites/snippets.doe1915.com/releases/20170911160038
+  INFO [9d378ead] Finished in 0.061 seconds with exit status 0 (successful).
+  INFO [5aff44ae] Running cd /opt/sites/snippets.doe1915.com/releases/20170911160038/storage/logs/ && sudo touch laravel.log && sudo chown www-data:www-data laravel.log && sudo chmod 775 laravel.log as doe@snippets.doe1915.com
+ DEBUG [5aff44ae] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911160038/storage/logs/ && sudo touch laravel.log && sudo chown www-data:www-data laravel.log && sudo chmod 775 laravel.log
+  INFO [5aff44ae] Finished in 0.077 seconds with exit status 0 (successful).
+  INFO [cc83f4f1] Running cd /opt/sites/snippets.doe1915.com/releases/20170911160038 && php artisan route:clear && php artisan config:clear && php artisan view:clear as doe@snippets.doe1915.com
+ DEBUG [cc83f4f1] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911160038 && php artisan route:clear && php artisan config:clear && php artisan view:clear
+ DEBUG [cc83f4f1] 	Route cache cleared!
+ DEBUG [cc83f4f1] 	
+ DEBUG [cc83f4f1] 	Configuration cache cleared!
+ DEBUG [cc83f4f1] 	
+ DEBUG [cc83f4f1] 	Compiled views cleared!
+ DEBUG [cc83f4f1] 	
+  INFO [cc83f4f1] Finished in 0.516 seconds with exit status 0 (successful).
+  INFO [ceabda6d] Running sudo chmod -R 755 /opt/sites/snippets.doe1915.com/releases/20170911160038/storage/framework/ as doe@snippets.doe1915.com
+ DEBUG [ceabda6d] Command: sudo chmod -R 755 /opt/sites/snippets.doe1915.com/releases/20170911160038/storage/framework/
+  INFO [ceabda6d] Finished in 0.086 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-11 12:02:03 -0400 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [7913f78d] Running /usr/bin/env mkdir -p /tmp as doe@snippets.doe1915.com
+ DEBUG [7913f78d] Command: /usr/bin/env mkdir -p /tmp
+  INFO [7913f78d] Finished in 0.543 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh 100.0%
+  INFO [b087f294] Running /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh as doe@snippets.doe1915.com
+ DEBUG [b087f294] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh
+  INFO [b087f294] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [fe1a9cc1] Running /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD as doe@snippets.doe1915.com
+ DEBUG [fe1a9cc1] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git ls-remote git@github.com:doeanderson/snippets HEAD )
+ DEBUG [fe1a9cc1] 	030ab2a84e6b43e1795735988a7f0a081d6f8f1b	HEAD
+  INFO [fe1a9cc1] Finished in 0.952 seconds with exit status 0 (successful).
+  INFO [7585a554] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [7585a554] Command: /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/shared /opt/sites/snippets.doe1915.com/releases
+  INFO [7585a554] Finished in 0.112 seconds with exit status 0 (successful).
+ DEBUG [4e427a58] Running [ -f /opt/sites/snippets.doe1915.com/current/REVISION ] as doe@snippets.doe1915.com
+ DEBUG [4e427a58] Command: [ -f /opt/sites/snippets.doe1915.com/current/REVISION ]
+ DEBUG [4e427a58] Finished in 0.061 seconds with exit status 1 (failed).
+ DEBUG [0ec93846] Running [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ] as doe@snippets.doe1915.com
+ DEBUG [0ec93846] Command: [ -f /opt/sites/snippets.doe1915.com/repo/HEAD ]
+ DEBUG [0ec93846] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /opt/sites/snippets.doe1915.com/repo
+ DEBUG [61f48330] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [61f48330] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [61f48330] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [1bc6a9da] Running /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets as doe@snippets.doe1915.com
+ DEBUG [1bc6a9da] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote set-url origin git@github.com:doeanderson/snippets )
+  INFO [1bc6a9da] Finished in 0.059 seconds with exit status 0 (successful).
+  INFO [de3bd952] Running /usr/bin/env git remote update --prune as doe@snippets.doe1915.com
+ DEBUG [de3bd952] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [de3bd952] 	Fetching origin
+  INFO [de3bd952] Finished in 0.375 seconds with exit status 0 (successful).
+ DEBUG [3f09328e] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [3f09328e] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [3f09328e] Finished in 0.075 seconds with exit status 0 (successful).
+  INFO [dcdececb] Running /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170911160205 as doe@snippets.doe1915.com
+ DEBUG [dcdececb] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env mkdir -p /opt/sites/snippets.doe1915.com/releases/20170911160205 )
+  INFO [dcdececb] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [cdc50b7e] Running /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170911160205 as doe@snippets.doe1915.com
+ DEBUG [cdc50b7e] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git archive deploy | /usr/bin/env tar -x -f - -C /opt/sites/snippets.doe1915.com/releases/20170911160205 )
+  INFO [cdc50b7e] Finished in 0.154 seconds with exit status 0 (successful).
+ DEBUG [95198c1f] Running if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [95198c1f] Command: if test ! -d /opt/sites/snippets.doe1915.com/repo; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/repo'" 1>&2; false; fi
+ DEBUG [95198c1f] Finished in 0.069 seconds with exit status 0 (successful).
+ DEBUG [f6de383a] Running /usr/bin/env git rev-list --max-count=1 deploy as doe@snippets.doe1915.com
+ DEBUG [f6de383a] Command: cd /opt/sites/snippets.doe1915.com/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Doe-Anderson-Snippets-staging-jlong.sh" ; /usr/bin/env git rev-list --max-count=1 deploy )
+ DEBUG [f6de383a] 	7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea
+ DEBUG [f6de383a] Finished in 0.057 seconds with exit status 0 (successful).
+ DEBUG [44e9b4d3] Running if test ! -d /opt/sites/snippets.doe1915.com/releases/20170911160205; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases/20170911160205'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [44e9b4d3] Command: if test ! -d /opt/sites/snippets.doe1915.com/releases/20170911160205; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases/20170911160205'" 1>&2; false; fi
+ DEBUG [44e9b4d3] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [319109d1] Running /usr/bin/env echo "7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea" >> REVISION as doe@snippets.doe1915.com
+ DEBUG [319109d1] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911160205 && /usr/bin/env echo "7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea" >> REVISION
+  INFO [319109d1] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [3b23373a] Running /usr/bin/env ln -s /opt/sites/snippets.doe1915.com/releases/20170911160205 /opt/sites/snippets.doe1915.com/releases/current as doe@snippets.doe1915.com
+ DEBUG [3b23373a] Command: /usr/bin/env ln -s /opt/sites/snippets.doe1915.com/releases/20170911160205 /opt/sites/snippets.doe1915.com/releases/current
+  INFO [3b23373a] Finished in 0.072 seconds with exit status 0 (successful).
+  INFO [d0cdb87b] Running /usr/bin/env mv /opt/sites/snippets.doe1915.com/releases/current /opt/sites/snippets.doe1915.com as doe@snippets.doe1915.com
+ DEBUG [d0cdb87b] Command: /usr/bin/env mv /opt/sites/snippets.doe1915.com/releases/current /opt/sites/snippets.doe1915.com
+  INFO [d0cdb87b] Finished in 0.063 seconds with exit status 0 (successful).
+ DEBUG [a0ca9e51] Running /usr/bin/env ls -x /opt/sites/snippets.doe1915.com/releases as doe@snippets.doe1915.com
+ DEBUG [a0ca9e51] Command: /usr/bin/env ls -x /opt/sites/snippets.doe1915.com/releases
+ DEBUG [a0ca9e51] 	20170911160205
+ DEBUG [a0ca9e51] Finished in 0.099 seconds with exit status 0 (successful).
+  INFO Keeping 1 of 1 deployed releases on snippets.doe1915.com
+  INFO No old releases (keeping newest 1) on snippets.doe1915.com
+ DEBUG [af44f951] Running if test ! -d /opt/sites/snippets.doe1915.com/releases; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases'" 1>&2; false; fi as doe@snippets.doe1915.com
+ DEBUG [af44f951] Command: if test ! -d /opt/sites/snippets.doe1915.com/releases; then echo "Directory does not exist '/opt/sites/snippets.doe1915.com/releases'" 1>&2; false; fi
+ DEBUG [af44f951] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [025a7abb] Running /usr/bin/env echo "Branch deploy (at 7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea) deployed as release 20170911160205 by jlong" >> /opt/sites/snippets.doe1915.com/revisions.log as doe@snippets.doe1915.com
+ DEBUG [025a7abb] Command: cd /opt/sites/snippets.doe1915.com/releases && /usr/bin/env echo "Branch deploy (at 7c2f62fafc5203cbbfe3925b8a6f7ac796f1c3ea) deployed as release 20170911160205 by jlong" >> /opt/sites/snippets.doe1915.com/revisions.log
+  INFO [025a7abb] Finished in 0.061 seconds with exit status 0 (successful).
+  INFO [c5d26caa] Running cp -r /opt/sites/snippets.doe1915.com/vendor /opt/sites/snippets.doe1915.com/releases/20170911160205 as doe@snippets.doe1915.com
+ DEBUG [c5d26caa] Command: cp -r /opt/sites/snippets.doe1915.com/vendor /opt/sites/snippets.doe1915.com/releases/20170911160205
+  INFO [c5d26caa] Finished in 1.735 seconds with exit status 0 (successful).
+  INFO [c637450d] Running cp -r /opt/sites/snippets.doe1915.com/bootstrap /opt/sites/snippets.doe1915.com/releases/20170911160205 as doe@snippets.doe1915.com
+ DEBUG [c637450d] Command: cp -r /opt/sites/snippets.doe1915.com/bootstrap /opt/sites/snippets.doe1915.com/releases/20170911160205
+  INFO [c637450d] Finished in 0.068 seconds with exit status 0 (successful).
+  INFO [04d98aa8] Running cp /opt/sites/snippets.doe1915.com/.env /opt/sites/snippets.doe1915.com/releases/20170911160205 as doe@snippets.doe1915.com
+ DEBUG [04d98aa8] Command: cp /opt/sites/snippets.doe1915.com/.env /opt/sites/snippets.doe1915.com/releases/20170911160205
+  INFO [04d98aa8] Finished in 0.094 seconds with exit status 0 (successful).
+  INFO [22beb7d3] Running cd /opt/sites/snippets.doe1915.com/releases/20170911160205/storage/logs/ && sudo touch laravel.log && sudo chown www-data:www-data laravel.log && sudo chmod 775 laravel.log as doe@snippets.doe1915.com
+ DEBUG [22beb7d3] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911160205/storage/logs/ && sudo touch laravel.log && sudo chown www-data:www-data laravel.log && sudo chmod 775 laravel.log
+  INFO [22beb7d3] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO [761e65fb] Running cd /opt/sites/snippets.doe1915.com/releases/20170911160205 && php artisan route:clear && php artisan config:clear && php artisan view:clear as doe@snippets.doe1915.com
+ DEBUG [761e65fb] Command: cd /opt/sites/snippets.doe1915.com/releases/20170911160205 && php artisan route:clear && php artisan config:clear && php artisan view:clear
+ DEBUG [761e65fb] 	Route cache cleared!
+ DEBUG [761e65fb] 	
+ DEBUG [761e65fb] 	Configuration cache cleared!
+ DEBUG [761e65fb] 	
+ DEBUG [761e65fb] 	Compiled views cleared!
+ DEBUG [761e65fb] 	
+  INFO [761e65fb] Finished in 0.497 seconds with exit status 0 (successful).
+  INFO [b69592f8] Running sudo chmod -R 777 /opt/sites/snippets.doe1915.com/releases/20170911160205/storage/framework/ as doe@snippets.doe1915.com
+ DEBUG [b69592f8] Command: sudo chmod -R 777 /opt/sites/snippets.doe1915.com/releases/20170911160205/storage/framework/
+  INFO [b69592f8] Finished in 0.091 seconds with exit status 0 (successful).
+  INFO [0702e39b] Running scp -r public/css jlong@doe1915.com:/home/jlong as jlong@localhost
+ DEBUG [0702e39b] Command: scp -r public/css jlong@doe1915.com:/home/jlong
+  INFO [0702e39b] Finished in 0.680 seconds with exit status 0 (successful).
+  INFO [67246835] Running scp -r public/js jlong@doe1915.com:/home/jlong as jlong@localhost
+ DEBUG [67246835] Command: scp -r public/js jlong@doe1915.com:/home/jlong
+  INFO [67246835] Finished in 0.923 seconds with exit status 0 (successful).
+  INFO [fd9171ff] Running sudo chown -R doe:doe /home/jlong/css /home/jlong/js as doe@snippets.doe1915.com
+ DEBUG [fd9171ff] Command: sudo chown -R doe:doe /home/jlong/css /home/jlong/js
+  INFO [fd9171ff] Finished in 0.062 seconds with exit status 0 (successful).
+  INFO [195b0d65] Running sudo cp -r /home/jlong/css /opt/sites/snippets.doe1915.com/releases/20170911160205/public/ as doe@snippets.doe1915.com
+ DEBUG [195b0d65] Command: sudo cp -r /home/jlong/css /opt/sites/snippets.doe1915.com/releases/20170911160205/public/
+  INFO [195b0d65] Finished in 0.072 seconds with exit status 0 (successful).
+  INFO [57f20e63] Running sudo cp -r /home/jlong/js /opt/sites/snippets.doe1915.com/releases/20170911160205/public/ as doe@snippets.doe1915.com
+ DEBUG [57f20e63] Command: sudo cp -r /home/jlong/js /opt/sites/snippets.doe1915.com/releases/20170911160205/public/
+  INFO [57f20e63] Finished in 0.063 seconds with exit status 0 (successful).

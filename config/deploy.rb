@@ -1,17 +1,17 @@
 # config valid only for current version of Capistrano
 lock "3.9.0"
 
-set :application, "Doe-Anderson-Snippets"
+set :application, "snippets"
 set :repo_url, "git@github.com:doeanderson/snippets"
 
 set :deploy_to, "/opt/sites/snippets.doe1915.com"
 
 set :keep_releases, 5
 
-# after :deploy, 'shared_files:move'
-# after 'shared_files:move', 'artisan:cache'
-# after 'artisan:cache', 'permissions:views'
-# after 'permissions:views', 'front_end:move_built_files'
+after :deploy, 'shared_files:move'
+after 'shared_files:move', 'artisan:cache'
+after 'artisan:cache', 'permissions:views'
+after 'permissions:views', 'front_end:move_built_files'
 
 # set :linked_dirs, %w{storage bootstrap}
 # after :deploy, 'composer:move'
